@@ -2,26 +2,33 @@ import React from 'react';
 import './App.css';
 
 function App() {
-  const [imageInfo, setImageInfo] = React.useState({});
+  const [imageURL, setImageURL] = React.useState('');
   const [text, setText] = React.useState('kitteh sez wut');
-  const [submit, setSubmit] = React.useState(false);
+  const [triggerFetch, setTriggerFetch] = React.useState(false);
+
+  const sanitizeInput = () => {
+    let oldText = text.replace(/[?#%/\\]/gi, '');
+    setText(oldText);
+  };
 
   React.useEffect(() => {
-    fetch(`https://cataas.com/cat/says/${text || ' '}?json=true`)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setImageInfo(data);
-      })
-      .catch(err => {
-        console.log(`error: ${err}`);
-      });
-    setSubmit(false);
-  }, [submit]);
+    const makeFetchHappen = async () => {
+      try {
+        const res = await fetch(`https://cataas.com/cat/says/${text || ' '}?json=true`);
+        const data = await res.json();
+        console.log('data:', data);
+        setImageURL(data.url);
+      } catch (err) {
+        console.log('error:', err);
+      }
+    }
+    makeFetchHappen();
+  }, [triggerFetch]);
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmit(true);
+    sanitizeInput();
+    setTriggerFetch(!triggerFetch);
   };
 
   console.log('text:', text);
@@ -29,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <h1>Cats On Demand</h1>
-      <img src={`https://cataas.com${imageInfo.url}`} alt="cat" />
+      <img src={`https://cataas.com${imageURL}`} alt="cat" />
       <form onSubmit={handleSubmit}>
         <input
           type="text" 
