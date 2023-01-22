@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 function App() {
   const [imageURL, setImageURL] = React.useState('');
-  const [text, setText] = React.useState('kitteh sez wut');
+  const [text, setText] = React.useState('LOOK AT MEOW');
   const [triggerFetch, setTriggerFetch] = React.useState(false);
 
+  // Remove problematic chars before fetching
   const sanitizeInput = () => {
     let oldText = text.replace(/[?#%/\\]/gi, '');
     setText(oldText);
@@ -35,16 +38,19 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Cats On Demand</h1>
-      <img src={`https://cataas.com${imageURL}`} alt="cat" />
+      <Header />
+      <div className="imageContainer">
+        <img src={`https://cataas.com${imageURL}`} alt="cat" />
+      </div>
       <form onSubmit={handleSubmit}>
         <input
           type="text" 
           value={text} 
           onChange={e => setText(e.target.value)}
         />
-        <button>Show Me Your Kitties</button>
+        <button type='submit'>Show Me Your Kitties</button>
       </form>
+      <Footer />
     </div>
   );
 }
