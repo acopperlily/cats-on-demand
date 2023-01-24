@@ -5,23 +5,23 @@
 }
 
 body {
-  background-image: linear-gradient(#e7f4e8, #4e7499);
   color: #e9f7e9;
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  height: 100vh;
 }
 
 .App {
+  background-image: linear-gradient(#e7f4e8, #4e7499);
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 }
 
 header {
-  background: #336699;
+  background: #2d8888;
 }
 
 h1 {
@@ -30,21 +30,47 @@ h1 {
   font-size: 1.8rem;
 }
 
-.image-container {
-  height: 40vh;
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+.imageContainer {
+  width: 90%;
+  height: 50vh;
 }
 
 img {
-  /* height: 250px; */
-  width: 90%;
-  display: block;
-  margin: 0 auto;
+  width: 100%;
+  height: inherit;
+  object-fit: contain;
 }
 
+form {
+  padding-top: 1rem;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.5rem;
+  font-size: 0.9rem;
+}
+/* 
+label, input {
+  flex-basis: 2;
+} */
+
 input {
+  width: auto;
+  padding-left: 5px;
   border: none;
-  padding: 5px;
-  background: white;
+  color: #e9f7e9;
+  font-size: inherit;
+  background: transparent;
 }
 
 input::placeholder {
@@ -52,34 +78,40 @@ input::placeholder {
 }
 
 button {
+  display: block;
+  width: 100%;
   border: none;
-  padding: 1rem 3rem;
-  background: #74cc66;
-  color: rgb(36, 35, 35);
+  padding: 0.8rem 1rem;
+  background: #2d827a;
+  color: #e9f7e9;
   border-radius: 25px;
   cursor: pointer;
+  /* flex-grow: 2; */
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
+  box-shadow: 1px 5px 15px #122c35;
 }
 
 button:hover {
-  background: #34d91b;
-  /* color: rgb(189, 189, 189); */
+  background: #3baa9e;
 }
-
 
 footer {
   padding: 0.8rem;
-  background: #2f4858;
+  background: #1e4a58;
   font-size: 0.8rem;
+}
+
+span {
+  opacity: 0.8;
+  padding-right: 0.2rem;
 }
 
 a {
   text-decoration: none;
   color: #e9f7e9;
-  padding-left: 0.5rem;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 a:hover {
@@ -90,21 +122,63 @@ a:hover {
   padding-top: 0.7rem;
 }
 
+.links a {
+  padding-left: 0.5rem;
+}
+
 @media screen and (min-width: 360px) {
   h1 {
     font-size: 2rem;
+    /* padding: 1rem; */
   }
 }
 
 @media screen and (min-width: 400px) {
   h1 {
     font-size: 2.3rem;
+    /* padding: 1rem; */
   }
 }
 
 @media screen and (min-width: 600px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
+    padding: 0.7rem;
+  }
+
+  form {
+    font-size: 1.1rem;
+  }
+
+  button {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+  }
+
+  footer {
+    padding: 2rem;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .links {
+    padding-top: 0.3rem;
+    font-size: 1.2rem;
   }
   
+}
+
+@media screen and (min-width: 780px) {
+  form {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  form {
+    width: 50%;
+  }
 }

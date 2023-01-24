@@ -7,6 +7,7 @@ function App() {
   const [imageURL, setImageURL] = React.useState('');
   const [text, setText] = React.useState('LOOK AT MEOW');
   const [triggerFetch, setTriggerFetch] = React.useState(false);
+  const [inputWidth, setInputWidth] = React.useState(`${text.length + 3}ch`);
 
   // Remove problematic chars before fetching
   const sanitizeInput = () => {
@@ -34,22 +35,37 @@ function App() {
     setTriggerFetch(!triggerFetch);
   };
 
+  const handleChange = e => {
+    setText(e.target.value);
+    let offset = 2;
+    if (text.toUpperCase() === text) offset = 5;
+    const len = text.length > 0 ? text.length + offset : 2;
+    setInputWidth(`${len}ch`);
+  };
+
   console.log('text:', text);
+  console.log('len', text.length);
+  console.log('width:', inputWidth);
 
   return (
     <div className="App">
       <Header />
-      <div className="imageContainer">
-        <img src={`https://cataas.com${imageURL}`} alt="cat" />
-      </div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text" 
-          value={text} 
-          onChange={e => setText(e.target.value)}
-        />
-        <button type='submit'>Show Me Your Kitties</button>
-      </form>
+      <main>
+        <div className="imageContainer">
+          <img src={`https://cataas.com${imageURL}`} alt="cat" />
+        </div>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="text">Optional text: </label>
+          <input
+            type="text" 
+            id='text'
+            value={text} 
+            onChange={handleChange}
+            style={{width: `${inputWidth}`}}
+          />
+          <button type='submit'>Show Me Your Kitties</button>
+        </form>
+      </main>
       <Footer />
     </div>
   );
