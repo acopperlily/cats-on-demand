@@ -51,7 +51,9 @@ img {
 
 form {
   padding-top: 1rem;
-  width: 90%;
+  /* width: 90%; */
+  width: 50vw;
+  /* max-width: 50vw; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -81,7 +83,7 @@ button {
   display: block;
   width: 100%;
   border: none;
-  padding: 0.8rem 1rem;
+  padding: 0.6rem 0.8rem;
   background: #2d827a;
   color: #e9f7e9;
   border-radius: 25px;
@@ -126,21 +128,31 @@ a:hover {
   padding-left: 0.5rem;
 }
 
-@media screen and (min-width: 360px) {
+@media screen and (min-height: 400px) {
+  form {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 360px) and (min-height: 400px) {
   h1 {
-    font-size: 2rem;
+    /* font-size: 2rem; */
+    /* padding: 1rem; */
+  }
+
+  form {
+    /* width: 50vw; */
+  }
+}
+
+@media screen and (min-width: 400px) and (min-height: 400px) {
+  h1 {
+    /* font-size: 2.3rem; */
     /* padding: 1rem; */
   }
 }
 
-@media screen and (min-width: 400px) {
-  h1 {
-    font-size: 2.3rem;
-    /* padding: 1rem; */
-  }
-}
-
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 600px) and (min-height: 450px) {
   h1 {
     font-size: 2.7rem;
     padding: 0.7rem;
@@ -171,7 +183,7 @@ a:hover {
   
 }
 
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 780px) and (min-height: 400px) {
   form {
     width: 80%;
   }
