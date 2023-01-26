@@ -38,6 +38,41 @@ main {
   gap: 1rem;
 }
 
+.modal {
+  padding: 1rem;
+  width: 90%;
+  height: 70%;
+  background: #122c35;
+  border-radius: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  text-align: left;
+  overflow: scroll;
+}
+
+.exit {
+  font-size: 1.4rem;
+  display: block;
+  margin-left: auto;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal p {
+  padding: 1rem;
+  /* margin-bottom: 1rem; */
+}
+
 .imageContainer {
   width: 90%;
   height: 50vh;

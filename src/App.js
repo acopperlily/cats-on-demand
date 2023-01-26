@@ -2,12 +2,14 @@ import React from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Modal from './components/Modal';
 
 function App() {
   const [imageURL, setImageURL] = React.useState('');
   const [text, setText] = React.useState('LOOK AT MEOW');
   const [triggerFetch, setTriggerFetch] = React.useState(false);
   const [inputWidth, setInputWidth] = React.useState(`${text.length + 3}ch`);
+  const [toggleModal, setToggleModal] = React.useState(false);
 
   // Remove problematic chars before fetching
   const sanitizeInput = () => {
@@ -47,10 +49,16 @@ function App() {
   console.log('len', text.length);
   console.log('width:', inputWidth);
 
+  const handleClick = () => {
+    console.log('modal', toggleModal);
+    setToggleModal(toggleModal => !toggleModal);
+  };
+
   return (
     <div className="App">
-      <Header />
-      <main>
+      <Header handleClick={handleClick}/>
+      {toggleModal && <Modal handleClick={handleClick} />}
+      <main style={toggleModal == true ? {filter: 'blur(8px)'} : {filter: 'none'}}>
         <div className="imageContainer">
           <img src={`https://cataas.com${imageURL}`} alt="cat" />
         </div>
