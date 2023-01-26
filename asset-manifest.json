@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/github.io/static/css/main.c1261b6d.css",
-    "main.js": "/github.io/static/js/main.0a277747.js",
-    "index.html": "/github.io/index.html",
-    "main.c1261b6d.css.map": "/github.io/static/css/main.c1261b6d.css.map",
-    "main.0a277747.js.map": "/github.io/static/js/main.0a277747.js.map"
+    "main.css": "/github.io/cats-on-demand/static/css/main.c1261b6d.css",
+    "main.js": "/github.io/cats-on-demand/static/js/main.0a277747.js",
+    "index.html": "/github.io/cats-on-demand/index.html",
+    "main.c1261b6d.css.map": "/github.io/cats-on-demand/static/css/main.c1261b6d.css.map",
+    "main.0a277747.js.map": "/github.io/cats-on-demand/static/js/main.0a277747.js.map"
   },
   "entrypoints": [
     "static/css/main.c1261b6d.css",
