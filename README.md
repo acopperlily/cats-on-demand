@@ -3,7 +3,6 @@ Do you demand cats? Users can request cats freshly served up by Cataas (Cat as a
 
 **Link to project:** https://acopperlily.github.io/cats-on-demand/
 
-<!-- ![alt tag](https://github.com/acopperlily/cats-on-demand/blob/main/public/kitten-preview.png?raw=true) -->
 
 ## How It's Made
 
