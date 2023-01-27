@@ -11,7 +11,7 @@ body {
 }
 
 .App {
-  background-image: linear-gradient(#e7f4e8, #4e7499);
+  background-image: linear-gradient(#e7f4e8, #4e6699);
 }
 
 .wrapper {
@@ -25,7 +25,7 @@ body {
 header {
   background: #2d8888;
   display: grid;
-  grid-template-columns: 1.5rem 3fr 1.5rem;
+  grid-template-columns: 1.5rem 1fr 1.5rem;
   justify-content: center;
   align-items: center;
 }
@@ -38,7 +38,6 @@ h1 {
 }
 
 .info {
-  grid-column: 3 / 4;
   font-size: 0.8rem;
   justify-self: center;
   cursor: pointer;
@@ -101,28 +100,29 @@ img {
 
 form {
   padding-top: 1rem;
-  /* width: 90%; */
   width: 50vw;
-  /* max-width: 50vw; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   row-gap: 0.5rem;
   font-size: 0.9rem;
 }
-/* 
-label, input {
-  flex-basis: 2;
-} */
+
+label {
+  font-weight: 500;
+}
 
 input {
   width: auto;
-  padding-left: 5px;
+  margin-left: 8px;
   border: none;
   color: #e9f7e9;
+  font-family: inherit;
   font-size: inherit;
+  text-align: center;
   background: transparent;
+  border-bottom: 2px dotted #122c35;
 }
 
 input::placeholder {
@@ -134,14 +134,13 @@ button {
   width: 100%;
   border: none;
   padding: 0.6rem 0.8rem;
-  background: #2d827a;
+  background: #34978d;
   color: #e9f7e9;
   border-radius: 25px;
   cursor: pointer;
-  /* flex-grow: 2; */
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   box-shadow: 1px 5px 15px #122c35;
 }
 
@@ -151,7 +150,7 @@ button:hover {
 
 footer {
   padding: 0.8rem;
-  background: #1e4a58;
+  background: #183c47;
   font-size: 0.8rem;
 }
 

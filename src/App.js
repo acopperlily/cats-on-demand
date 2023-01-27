@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Modal from './components/Modal';
 import Image from './components/Image';
+import Form from './components/Form';
 
 function App() {
   const [imageURL, setImageURL] = React.useState('');
@@ -11,6 +12,7 @@ function App() {
   const [triggerFetch, setTriggerFetch] = React.useState(false);
   const [inputWidth, setInputWidth] = React.useState(`${text.length + 3}ch`);
   const [toggleModal, setToggleModal] = React.useState(false);
+  const [error, setError] = React.useState(false);
 
   // Remove problematic chars before fetching
   const sanitizeInput = () => {
@@ -25,8 +27,10 @@ function App() {
         const data = await res.json();
         console.log('data:', data);
         setImageURL(data.url);
+        setError(false);
       } catch (err) {
         console.log('error:', err);
+        setError(true);
       }
     }
     makeFetchHappen();
@@ -49,7 +53,6 @@ function App() {
   console.log('text:', text);
   console.log('len', text.length);
   console.log('width:', inputWidth);
-  console.log(imageURL);
 
   const handleClick = () => {
     console.log('modal', toggleModal);
@@ -67,23 +70,15 @@ function App() {
           : {filter: 'none'}} 
         onClick={toggleModal ? handleClick : null}
       >
-        <Header handleClick={handleClick}/>
-        <main>
-          <Image url={imageURL} />
 
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="text">Optional text: </label>
-            <input
-              type="text" 
-              id='text'
-              value={text} 
-              onChange={handleChange}
-              style={{width: `${inputWidth}`}}
-            />
-            <button type='submit'>Show Me Your Kitties</button>
-          </form>
-          
+        <Header handleClick={handleClick}/>
+
+        <main>
+          <Image url={imageURL} error={error} />
+
+          <Form onSubmit={handleSubmit} onChange={handleChange} text={text} inputWidth={inputWidth} />
         </main>
+
         <Footer />
       </div>
     </div>
