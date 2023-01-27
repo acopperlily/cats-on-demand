@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Modal from './components/Modal';
+import Image from './components/Image';
 
 function App() {
   const [imageURL, setImageURL] = React.useState('');
@@ -48,6 +49,7 @@ function App() {
   console.log('text:', text);
   console.log('len', text.length);
   console.log('width:', inputWidth);
+  console.log(imageURL);
 
   const handleClick = () => {
     console.log('modal', toggleModal);
@@ -56,25 +58,34 @@ function App() {
 
   return (
     <div className="App">
-      <Header handleClick={handleClick}/>
       {toggleModal && <Modal handleClick={handleClick} />}
-      <main style={toggleModal == true ? {filter: 'blur(8px)'} : {filter: 'none'}}>
-        <div className="imageContainer">
-          <img src={`https://cataas.com${imageURL}`} alt="cat" />
-        </div>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="text">Optional text: </label>
-          <input
-            type="text" 
-            id='text'
-            value={text} 
-            onChange={handleChange}
-            style={{width: `${inputWidth}`}}
-          />
-          <button type='submit'>Show Me Your Kitties</button>
-        </form>
-      </main>
-      <Footer />
+
+      <div
+        className="wrapper"
+        style={toggleModal
+          ? {filter: 'blur(8px)'} 
+          : {filter: 'none'}} 
+        onClick={toggleModal ? handleClick : null}
+      >
+        <Header handleClick={handleClick}/>
+        <main>
+          <Image url={imageURL} />
+
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="text">Optional text: </label>
+            <input
+              type="text" 
+              id='text'
+              value={text} 
+              onChange={handleChange}
+              style={{width: `${inputWidth}`}}
+            />
+            <button type='submit'>Show Me Your Kitties</button>
+          </form>
+          
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -12,7 +12,9 @@ body {
 
 .App {
   background-image: linear-gradient(#e7f4e8, #4e7499);
+}
 
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,12 +24,24 @@ body {
 
 header {
   background: #2d8888;
+  display: grid;
+  grid-template-columns: 1.5rem 3fr 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   color: #e9f7e9;
   font-family: 'Ramabhadra', sans-serif;
   font-size: 1.8rem;
+  grid-column: 2 / 3;
+}
+
+.info {
+  grid-column: 3 / 4;
+  font-size: 0.8rem;
+  justify-self: center;
+  cursor: pointer;
 }
 
 main {
@@ -41,7 +55,7 @@ main {
 .modal {
   padding: 1rem;
   width: 90%;
-  height: 70%;
+  height: 80%;
   background: #122c35;
   border-radius: 20px;
   position: absolute;
@@ -56,10 +70,12 @@ main {
 }
 
 .exit {
+  color: #3fb6aa;
   font-size: 1.4rem;
   display: block;
   margin-left: auto;
   margin-bottom: 1.2rem;
+  cursor: pointer;
 }
 
 h3 {
@@ -70,7 +86,6 @@ h3 {
 
 .modal p {
   padding: 1rem;
-  /* margin-bottom: 1rem; */
 }
 
 .imageContainer {
