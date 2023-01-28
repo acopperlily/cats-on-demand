@@ -13,6 +13,7 @@ function App() {
   const [inputWidth, setInputWidth] = React.useState(`${text.length + 3}ch`);
   const [toggleModal, setToggleModal] = React.useState(false);
   const [error, setError] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   // Remove problematic chars before fetching
   const sanitizeInput = () => {
@@ -28,11 +29,14 @@ function App() {
         console.log('data:', data);
         setImageURL(data.url);
         setError(false);
+        setIsLoading(false)
       } catch (err) {
         console.log('error:', err);
         setError(true);
+        setIsLoading(false);
       }
     }
+    setIsLoading(true);
     makeFetchHappen();
   }, [triggerFetch]);
 
@@ -74,7 +78,7 @@ function App() {
         <Header handleClick={handleClick}/>
 
         <main>
-          <Image url={imageURL} error={error} />
+          <Image url={imageURL} error={error} isLoading={isLoading}/>
 
           <Form onSubmit={handleSubmit} onChange={handleChange} text={text} inputWidth={inputWidth} />
         </main>

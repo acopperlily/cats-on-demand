@@ -1,5 +1,6 @@
 import React from 'react';
 import errorPele from '../../src/errorPele.jpg';
+import loadPele from '../../src/pele.png';
 
 const Image = props => {
   const domain = 'https://cataas.com';
@@ -7,6 +8,7 @@ const Image = props => {
   let path = domain + props.url;
 
   if (props.error) path = errorPele;
+  if (props.isLoading) path = loadPele;
 
 
   return (
