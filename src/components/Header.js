@@ -5,12 +5,9 @@ const Header = props => {
   return (
     <header>
       <h1>Cats On Demand</h1>
-      {/* <div className="infoContainer"> */}
-        <FaInfoCircle
-          className="info"
-          onClick={props.handleClick}
-        />
-      {/* </div> */}
+      <div className="infoContainer" onClick={props.handleClick}>
+        <FaInfoCircle className="info" />
+      </div>
     </header>
   );
 };
