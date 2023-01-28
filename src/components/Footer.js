@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
 
-const Footer = () => {
+function Footer() {
   return (
     <footer>
       <p><span>&copy; 2022 &#8212; 2023 </span> <a href="https://aprilcopley.netlify.app" target='_blank'>April Copley</a></p>

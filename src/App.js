@@ -22,21 +22,22 @@ function App() {
   };
 
   React.useEffect(() => {
+    setIsLoading(true);
     const makeFetchHappen = async () => {
       try {
         const res = await fetch(`https://cataas.com/cat/says/${text || ' '}?json=true`);
         const data = await res.json();
+
         console.log('data:', data);
         setImageURL(data.url);
         setError(false);
-        setIsLoading(false)
       } catch (err) {
         console.log('error:', err);
         setError(true);
+      } finally {
         setIsLoading(false);
       }
     }
-    setIsLoading(true);
     makeFetchHappen();
   }, [triggerFetch]);
 
@@ -63,6 +64,7 @@ function App() {
     setToggleModal(toggleModal => !toggleModal);
   };
 
+
   return (
     <div className="App">
       {toggleModal && <Modal handleClick={handleClick} />}
@@ -78,7 +80,7 @@ function App() {
         <Header handleClick={handleClick}/>
 
         <main>
-          <Image url={imageURL} error={error} isLoading={isLoading}/>
+          <Image url={imageURL} error={error} isLoading={isLoading} />
 
           <Form onSubmit={handleSubmit} onChange={handleChange} text={text} inputWidth={inputWidth} />
         </main>

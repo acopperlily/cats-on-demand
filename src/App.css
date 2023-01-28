@@ -59,7 +59,7 @@ main {
 .modal {
   padding: 0.5rem;
   width: 90%;
-  height: 80%;
+  height: 90%;
   background: #122c35;
   border-radius: 20px;
   position: absolute;
@@ -90,26 +90,43 @@ main {
 h3 {
   text-align: center;
   font-size: 1.2rem;
+  padding: 0 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 .pContainer {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .pContainer p {
   padding: 0.7rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+}
+
+h4 {
+  color: #183c47;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .imageContainer {
   width: 90%;
   height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-img {
+.image {
   width: 100%;
   height: inherit;
+  object-fit: contain;
+}
+
+.error {
+  height: 70%;
   object-fit: contain;
 }
 
@@ -193,6 +210,31 @@ a:hover {
   padding-left: 0.5rem;
 }
 
+.loading {
+  width: 50px;
+  height: auto;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @media screen and (min-height: 400px) {
   form {
     width: 90%;
@@ -211,6 +253,12 @@ a:hover {
 
   h3 {
     font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 2rem;
   }
 
   .modal {
@@ -250,11 +298,17 @@ a:hover {
   
 }
 
-@media screen and (min-width: 780px) and (orientation: landscape) {
+@media screen and (min-width: 760px) {
   h1 {
     padding: 1.5rem;
   }
   form {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .modal {
     width: 50%;
   }
 }
