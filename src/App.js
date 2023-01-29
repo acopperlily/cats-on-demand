@@ -27,7 +27,6 @@ function App() {
       try {
         const res = await fetch(`https://cataas.com/cat/says/${text || ' '}?json=true`);
         const data = await res.json();
-
         console.log('data:', data);
         setImageURL(data.url);
         setError(false);
@@ -43,6 +42,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setImageURL('');
     sanitizeInput();
     setTriggerFetch(!triggerFetch);
   };

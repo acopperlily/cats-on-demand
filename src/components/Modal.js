@@ -10,7 +10,7 @@ const Modal = props => {
       <h3>Welcome to Cats On Demand!</h3>
 
       <div className="pContainer">
-        <p>COD is a web application that retrieves cat photos and GIFs from the <a href="https://cataas.com/#/" target='_blank' rel='noreferrer'>Cataas</a> (Cat as a Service) API.*</p>
+        <p>COD is a web application that retrieves cat photos and GIFs from <a href="https://cataas.com/#/" target='_blank' rel='noreferrer'>Cataas</a> (Cat as a Service) API.*</p>
 
         <p>Demanding a cat is as simple as smashing that big silly button.</p>
 
