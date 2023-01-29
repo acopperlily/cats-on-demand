@@ -34,7 +34,9 @@ function App() {
         console.log('error:', err);
         setError(true);
       } finally {
-        setIsLoading(false);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 500);
       }
     }
     makeFetchHappen();
@@ -42,7 +44,6 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setImageURL('');
     sanitizeInput();
     setTriggerFetch(!triggerFetch);
   };
@@ -66,7 +67,9 @@ function App() {
 
 
   return (
+
     <div className="App">
+
       {toggleModal && <Modal handleClick={handleClick} />}
 
       <div
@@ -80,12 +83,15 @@ function App() {
         <Header handleClick={handleClick}/>
 
         <main>
+          
           <Image url={imageURL} error={error} isLoading={isLoading} />
 
           <Form onSubmit={handleSubmit} onChange={handleChange} text={text} inputWidth={inputWidth} />
+
         </main>
 
         <Footer />
+
       </div>
     </div>
   );

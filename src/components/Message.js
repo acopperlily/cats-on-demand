@@ -12,7 +12,7 @@ const Message = props => {
     path = loadPele;
     warning = 'Loading...';
     style = 'loading';
-  } else  {
+  } else {
     path = errorPele;
     warning = 'Something went wrong...';
     style = 'error';
@@ -20,7 +20,7 @@ const Message = props => {
 
   return (
     <>
-      <h4>{warning}</h4>
+      <h2 className="message">{warning}</h2>
       <img src={path} alt="" className={style}/>
     </>
   );
