@@ -14,7 +14,7 @@ I implemented a fetch request to Cataas API to retrieve cat photos.
 
 ## Optimizations
 
-I would like to improve mobile responsiveness.
+I would like to add an option to keep the photo but change the text.
 
 ## Lessons Learned
 

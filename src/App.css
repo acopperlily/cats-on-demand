@@ -11,7 +11,7 @@ body {
 }
 
 .App {
-  background-image: linear-gradient(#e7f4e8, #a7b4d0);
+  background-image: linear-gradient(#e7f4e8, #6094af);
 }
 
 .wrapper {
@@ -35,6 +35,8 @@ h1 {
   color: #e9f7e9;
   font-family: 'Ramabhadra', sans-serif;
   font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.05ch;
   grid-column: 2 / 3;
   line-height: 2rem;
   padding: 0.5rem;
@@ -73,6 +75,10 @@ main {
   overflow: scroll;
 }
 
+.modal a {
+  color: #6be9dd;
+}
+
 .exitContainer {
   width: 25%;
   margin-left: auto;
@@ -83,7 +89,11 @@ main {
   color: #3fb6aa;
   font-size: 1.4rem;
   display: block;
-  margin: 0.3rem 0.3rem 1.2rem auto;
+  margin: 0.2rem 0.2rem 1.2rem auto;
+}
+
+.exit:hover {
+  color: #6be9dd;
 }
 
 h3 {
@@ -98,7 +108,7 @@ h3 {
 }
 
 .pContainer p {
-  padding: 0.7rem;
+  padding: 0.5rem 0;
   font-size: 0.8rem;
 }
 
@@ -173,12 +183,13 @@ button {
   font-family: 'Ramabhadra', sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
-  box-shadow: 1px 5px 15px #122c35;
+  letter-spacing: -0.05ch;
+  box-shadow: 1px 3px 5px #122c35;
   margin-bottom: 1rem;
 }
 
 button:hover {
-  background: #3baa9e;
+  background: #4bc2b6;
 }
 
 footer {
@@ -194,7 +205,7 @@ span {
 
 a {
   text-decoration: none;
-  color: #e9f7e9;
+  color: #d9ecf6;
   opacity: 0.8;
 }
 
