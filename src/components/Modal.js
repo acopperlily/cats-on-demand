@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTimes } from 'react-icons/fa';
+import { FaTimesCircle } from 'react-icons/fa';
 
 const Modal = props => {
 
@@ -8,7 +8,7 @@ const Modal = props => {
     <div className="modal">
 
       <div className="exitContainer" onClick={props.handleClick}>
-        <FaTimes className='exit' />
+        <FaTimesCircle className='exit' />
       </div>
 
       <h3>Welcome to Cats On Demand!</h3>
@@ -20,6 +20,8 @@ const Modal = props => {
         <p>Demanding a cat is as simple as smashing that big silly button.</p>
 
         <p>You can demand a cat with or without a message. Enter a word or phrase into the text field or just leave it blank.**</p>
+
+        <p>You can demand the same cat, but with a different message. Simply check the box and type something else.</p>
 
         <p><small>* <a href="https://cataas.com/#/" target='_blank' rel='noopener'>Cataas</a> is currently in "under recovery mode", and there may be interruptions in service as they migrate to a new server. If you encounter any errors, admire my darling Pele and try demanding a cat some other time.***</small></p>
 

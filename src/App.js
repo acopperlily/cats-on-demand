@@ -8,12 +8,14 @@ import Form from './components/Form';
 
 function App() {
   const [imageURL, setImageURL] = React.useState('');
+  const [imageID, setImageID] = React.useState('');
   const [text, setText] = React.useState('U CAN HAZ KITTEH');
   const [triggerFetch, setTriggerFetch] = React.useState(false);
-  const [inputWidth, setInputWidth] = React.useState(`${text.length + 3}ch`);
+  const [inputWidth, setInputWidth] = React.useState(`${text.length + 2}ch`);
   const [toggleModal, setToggleModal] = React.useState(false);
   const [error, setError] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [keepImage, setKeepImage] = React.useState(false);
 
   // Remove problematic chars before fetching
   const sanitizeInput = () => {
@@ -24,11 +26,14 @@ function App() {
   React.useEffect(() => {
     setIsLoading(true);
     const makeFetchHappen = async () => {
+      let url = `https://cataas.com/cat/`;
+      if (keepImage) url += imageID;
       try {
-        const res = await fetch(`https://cataas.com/cat/says/${text || ' '}?json=true`);
+        const res = await fetch(`${url}/says/${text || ' '}?json=true`);
         const data = await res.json();
         console.log('data:', data);
         setImageURL(data.url);
+        setImageID(data._id);
         setError(false);
       } catch (err) {
         console.log('error:', err);
@@ -50,10 +55,23 @@ function App() {
 
   const handleChange = e => {
     setText(e.target.value);
-    let offset = 2;
-    if (text.toUpperCase() === text) offset = 5;
-    const len = text.length > 0 ? text.length + offset : 2;
-    setInputWidth(`${len}ch`);
+    let length = e.target.value.length;
+    if (length > 5) {
+      length *= 1.7;
+    } else {
+      length = 9;
+    }
+    setInputWidth(`${length}ch`);
+  };
+
+  const deleteInput = e => {
+    setText('');
+    setInputWidth('9ch');
+  };
+
+  const toggleKeep = e => {
+    console.log('checked?', e.target.checked);
+    setKeepImage(e.target.checked);
   };
 
   console.log('text:', text);
@@ -86,7 +104,7 @@ function App() {
           
           <Image url={imageURL} error={error} isLoading={isLoading} />
 
-          <Form onSubmit={handleSubmit} onChange={handleChange} text={text} inputWidth={inputWidth} />
+          <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} inputWidth={inputWidth} toggleKeep={toggleKeep} />
 
         </main>
 

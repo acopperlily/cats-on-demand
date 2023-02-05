@@ -5,13 +5,15 @@
 }
 
 body {
-  color: #e9f7e9;
+  /* width: 100vw; */
+  color: rgb(233, 247, 233);
   font-family: 'Roboto', sans-serif;
   text-align: center;
 }
 
 .App {
-  background-image: linear-gradient(#e7f4e8, #6094af);
+  /* width: 100%; */
+  background-image: linear-gradient(#e7f4e8, #6074af);
 }
 
 .wrapper {
@@ -25,17 +27,17 @@ body {
 header {
   background: #2d8888;
   display: grid;
-  grid-template-columns: 10vw 80vw 10vw;
-  justify-content: center;
+  grid-template-columns: 10% 1fr 10%;
+  justify-items: center;
   align-items: center;
   margin-bottom: 1rem;
 }
 
 h1 {
   color: #e9f7e9;
-  font-family: 'Ramabhadra', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: -0.05ch;
   grid-column: 2 / 3;
   line-height: 2rem;
@@ -43,11 +45,16 @@ h1 {
 }
 
 .infoContainer {
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .info {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 
 main {
@@ -55,7 +62,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .modal {
@@ -80,16 +87,19 @@ main {
 }
 
 .exitContainer {
-  width: 25%;
+  width: 2.2rem;
+  height: 2.2rem;
   margin-left: auto;
+  margin-bottom: 0.5rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .exit {
   color: #3fb6aa;
   font-size: 1.4rem;
-  display: block;
-  margin: 0.2rem 0.2rem 1.2rem auto;
 }
 
 .exit:hover {
@@ -97,9 +107,12 @@ main {
 }
 
 h3 {
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: 1.2rem;
-  padding: 0 0.5rem;
+  font-weight: 700;
+  letter-spacing: -0.05ch;
+  padding: 0 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -114,8 +127,9 @@ h3 {
 
 .message {
   color: #236c6c;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 800;
   padding: 0 2rem;
   margin-bottom: 1rem;
 }
@@ -143,53 +157,88 @@ h3 {
 form {
   padding-top: 1rem;
   width: 50vw;
+  font-size: 0.8rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.textContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: baseline;
-  row-gap: 0.5rem;
-  font-size: 0.9rem;
+  align-items: center;
+  gap: 0.3rem;
+} 
+
+.checkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 label {
   font-weight: 500;
+  /* text-shadow: 1px 1px 1px #122c35; */
 }
 
 input {
   width: auto;
-  margin-left: 8px;
+  /* margin-left: 8px; */
+  /* border: 1px solid #122c35; */
   border: none;
-  color: #e9f7e9;
+  border-radius: 5px;
+  color: #122c35;
   font-family: inherit;
   font-size: inherit;
   text-align: center;
-  background: transparent;
-  border-bottom: 2px dotted #122c35;
+  background: rgba(233, 247, 233, 0.8);
 }
 
 input::placeholder {
   color: #2f4858
 }
 
+.deleteContainer {
+  /* border: 1px solid red; */
+  width: 1.5rem;
+  height: 1.5rem;
+  /* margin-left: 1rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.delete {
+  font-size: 1.1rem;
+  /* cursor: pointer; */
+}
+
 button {
   display: block;
   width: 100%;
   border: none;
-  padding: 0rem 0.8rem;
+  padding: 0.7rem 1rem;
   background: #34978d;
   color: #e9f7e9;
   border-radius: 50px;
   cursor: pointer;
-  font-family: 'Ramabhadra', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: -0.05ch;
   box-shadow: 1px 3px 5px #122c35;
   margin-bottom: 1rem;
 }
 
 button:hover {
-  background: #4bc2b6;
+  background: #439f96;
 }
 
 footer {
@@ -205,7 +254,7 @@ span {
 
 a {
   text-decoration: none;
-  color: #d9ecf6;
+  color: #d9f6f2;
   opacity: 0.8;
 }
 
