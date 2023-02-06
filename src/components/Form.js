@@ -7,7 +7,7 @@ const Form = props => {
 
     <div className="inputContainer">
       <div className="textContainer">
-        <label htmlFor="text">Optional text: </label>
+        <label htmlFor="text">Optional message: </label>
         <input
           type="text" 
           id='text'
@@ -21,7 +21,7 @@ const Form = props => {
       </div>
 
       <div className="checkContainer">
-        <label htmlFor="keep">Keep photo, change text:</label>
+        <label htmlFor="keep">Keep kitty, change message:</label>
         <input
           type="checkbox" 
           name="keep" 

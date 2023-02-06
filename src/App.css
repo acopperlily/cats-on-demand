@@ -5,14 +5,16 @@
 }
 
 body {
-  /* width: 100vw; */
+  width: 100vw;
+  min-height: 100%;
   color: rgb(233, 247, 233);
   font-family: 'Roboto', sans-serif;
   text-align: center;
 }
 
 .App {
-  /* width: 100%; */
+  width: 100%;
+  min-height: 100%;
   background-image: linear-gradient(#e7f4e8, #6074af);
 }
 
@@ -37,11 +39,13 @@ h1 {
   color: #e9f7e9;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
+  font-size: calc(1.3rem + 2vw);
   font-weight: 800;
   letter-spacing: -0.05ch;
   grid-column: 2 / 3;
   line-height: 2rem;
   padding: 0.5rem;
+  padding: calc(0.3rem + 1vh);
 }
 
 .infoContainer {
@@ -58,6 +62,7 @@ h1 {
 }
 
 main {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -130,8 +135,9 @@ h3 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   font-weight: 800;
+  letter-spacing: -0.05ch;
   padding: 0 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .imageContainer {
@@ -155,15 +161,17 @@ h3 {
 }
 
 form {
+  /* border: 1px solid red; */
   padding-top: 1rem;
-  width: 50vw;
-  font-size: 0.8rem;
+  width: 90%;
+  font-size: 0.7rem;
+  font-size: calc(0.4rem + 1vw);
 }
 
 .inputContainer {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.3rem;
   margin-bottom: 0.8rem;
 }
 
@@ -216,21 +224,25 @@ input::placeholder {
 }
 
 .delete {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   /* cursor: pointer; */
 }
 
 button {
   display: block;
-  width: 100%;
+  /* width: 100%; */
+  /* max-width: calc(350px + 4vw); */
+  margin: 0 auto;
   border: none;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1.8rem;
+  padding: calc(0.5rem + 1vh) calc(1rem + 2vw);
   background: #34978d;
   color: #e9f7e9;
   border-radius: 50px;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-size: calc(0.7rem + 2vw);
   font-weight: 800;
   letter-spacing: -0.05ch;
   box-shadow: 1px 3px 5px #122c35;
@@ -243,8 +255,15 @@ button:hover {
 
 footer {
   padding: 0.8rem;
+  padding: calc(0.8rem + 1vh);
   background: #183c47;
   font-size: 0.8rem;
+  font-size: calc(0.5rem + 1vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 span {
@@ -260,10 +279,6 @@ a {
 
 a:hover {
   opacity: 1;
-}
-
-.links {
-  padding-top: 0.7rem;
 }
 
 .links a {
@@ -295,13 +310,39 @@ a:hover {
   }
 }
 
-@media screen and (min-height: 400px) {
-  form {
-    width: 90%;
+@media screen and (orientation: landscape) {
+  footer {
+    flex-direction: row;
+  }
+
+  .links {
+    padding-top: 0.2rem;
   }
 }
 
-@media screen and (min-width: 710px) and (min-height: 420px) {
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  main {
+    flex-direction: row;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .imageContainer {
+    height: 60vh;
+  }
+
+  form {
+    /* padding: 0 1rem; */
+  }
+}
+
+/* @media screen and (min-height: 400px) {
+  form {
+    width: 90%;
+  }
+} */
+
+/* @media screen and (min-width: 710px) and (min-height: 420px) {
   h1 {
     font-size: 2.7rem;
     padding: 1rem;
@@ -339,7 +380,6 @@ a:hover {
   }
 
   button {
-    /* padding: 1rem 2rem; */
     font-size: 2rem;
   }
 
@@ -357,7 +397,7 @@ a:hover {
     font-size: 1.2rem;
   }
   
-}
+} */
 
 @media screen and (min-width: 800px) and (min-height: 500px) {
   h1 {
@@ -372,11 +412,11 @@ a:hover {
   }
 }
 
-@media screen and (min-width: 700px) and (max-height: 500px) {
+/* @media screen and (min-width: 700px) and (max-height: 500px) {
   form {
     width: 50%;
   }
-}
+} */
 
 @media screen and (min-width: 1000px) {
   form {
