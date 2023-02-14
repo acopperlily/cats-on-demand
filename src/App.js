@@ -80,7 +80,7 @@ function App() {
 
   const handleClick = () => {
     console.log('modal', toggleModal);
-    setToggleModal(toggleModal => !toggleModal);
+    setToggleModal(!toggleModal);
   };
 
 
@@ -93,8 +93,8 @@ function App() {
       <div
         className="wrapper"
         style={toggleModal
-          ? {filter: 'blur(8px)'} 
-          : {filter: 'none'}} 
+          ? {filter: 'brightness(20%)'}
+          : {filter: 'none'}}
         onClick={toggleModal ? handleClick : null}
       >
 
