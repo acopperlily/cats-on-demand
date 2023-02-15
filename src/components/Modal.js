@@ -21,7 +21,7 @@ const Modal = props => {
 
         <p>You can demand a cat with or without a message. Enter a word or phrase into the text field or just leave it blank.**</p>
 
-        <p>You can demand the same cat, but with a different message. Simply check the box and type something else.</p>
+        <p>Like the kitty but not the text? You can demand the same cat with a different message. Simply check the box and type something else.</p>
 
         <p><small>* <a href="https://cataas.com/#/" target='_blank' rel='noopener'>Cataas</a> is currently in "under recovery mode", and there may be interruptions in service as they migrate to a new server. If you encounter any errors, admire my darling Pele and try demanding a cat some other time.***</small></p>
 
