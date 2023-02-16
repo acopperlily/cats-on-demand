@@ -1,9 +1,9 @@
 :root {
   --light-bg-color: rgb(220, 247, 249);
-  --dark-bg-color: rgb(179, 181, 246);
-  --medium-teal-color: rgb(2, 124, 135);
-  --dark-teal-color: rgb(0, 47, 51);
-  --highlight-color: #3ac6b8;
+  --dark-bg-color: rgb(179, 226, 246);
+  --medium-teal-color: rgb(0, 161, 179);
+  --dark-teal-color: rgb(1, 82, 96);
+  --highlight-color: rgb(46, 200, 217);
 }
 *, *::after, *::before {
   padding: 0;
@@ -60,7 +60,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .infoContainer:hover {
@@ -89,7 +89,7 @@ main {
   /* padding: 0.5rem calc(0.3rem + 3vw); */
   width: 90%;
   height: 90%;
-  max-width: 600px;
+  max-width: 680px;
   background: var(--dark-teal-color);
   border-radius: 20px;
   position: absolute;
@@ -359,6 +359,10 @@ a:hover {
     width: 60vw;
   }
 
+  button {
+    font-size: 1.2rem;
+  }
+
 }
 
 @media screen and (min-width: 800px) and (min-height: 500px) {
@@ -374,7 +378,7 @@ a:hover {
   }
 
   .modal {
-    height: 75%;
+    height: 80%;
   }
 
   h3 {
@@ -387,6 +391,10 @@ a:hover {
 
   .pContainer p {
     font-size: 1rem;
+  }
+
+  button {
+    font-size: 2rem;
   }
 
   footer {
