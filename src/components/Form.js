@@ -25,6 +25,7 @@ const Form = props => {
         <div className="checkContainer">
           <label htmlFor="keep">Keep kitty, change message:</label>
           <input
+            className="toggle"
             type="checkbox" 
             name="keep" 
             id="keep" 

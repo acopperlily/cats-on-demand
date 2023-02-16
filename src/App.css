@@ -197,7 +197,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.3rem;
+  gap: 0.5rem;
 }
 
 .textContainer {
@@ -212,7 +212,7 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.5rem;
 }
 
 label {
@@ -238,17 +238,71 @@ input {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  opacity: 0.8;
 }
 
 .deleteContainer:hover {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 .delete {
   font-size: 1.1rem;
   font-size: calc(1rem + 1vw);
   color: var(--medium-teal-color);
+}
+
+/* Toggle Button */
+.toggle {
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent;
+	position: relative;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	margin-top: 7px;
+  background: transparent;
+}
+
+
+/* To create surface of toggle button */
+.toggle:after {
+	content: '';
+	width: 48px;
+	height: 26px;
+  width: calc(1.8rem + 2vw);
+  height: calc(1rem + 1vw);
+	display: inline-block;
+	background: rgba(196, 195, 195, 0.55);
+	border-radius: 18px;
+	clear: both;
+}
+
+
+/* Contents before checkbox to create toggle handle */
+.toggle:before {
+	content: '';
+	width: 26px;
+	height: 26px;
+  width: calc(1rem + 1vw);
+  height: calc(1rem + 1vw);
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 50%;
+	background: var(--light-bg-color);
+	box-shadow: inset -1px -1px 3px var(--dark-teal-color);
+}
+
+
+/* Shift the handle to left on check event */
+.toggle:checked:before {
+	left: 23px;
+  left: calc(0.8rem + 1vw);
+	box-shadow: inset -1px -1px 3px var(--dark-teal-color);
+}
+/* Background color when toggle button will be active */
+.toggle:checked:after {
+	background: var(--medium-teal-color);
 }
 
 button {
@@ -266,7 +320,6 @@ button {
   font-size: calc(0.7rem + 2vw);
   font-weight: 800;
   letter-spacing: -0.05ch;
-  /* box-shadow: 1px 3px 5px var(--dark-teal-color); */
   box-shadow: inset 0px -5px 10px 3px var(--dark-teal-color);
 
   margin-bottom: 1rem;
