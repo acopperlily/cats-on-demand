@@ -104,7 +104,7 @@ function App() {
           
           <Image url={imageURL} error={error} isLoading={isLoading} />
 
-          <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} inputWidth={inputWidth} toggleKeep={toggleKeep} />
+          <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} inputWidth={inputWidth} toggleKeep={toggleKeep} error={error} />
 
         </main>
 

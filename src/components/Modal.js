@@ -19,7 +19,7 @@ const Modal = props => {
 
         <p>Demanding a cat is as simple as smashing that big silly button.</p>
 
-        <p>You can demand a cat with or without a message. Enter a word or phrase into the text field or just leave it blank.**</p>
+        <p>You can demand a cat with or without a message. Enter a word or phrase into the text field or click the "X" to delete.**</p>
 
         <p>Like the kitty but not the text? You can demand the same cat with a different message. Simply check the box and type something else.</p>
 

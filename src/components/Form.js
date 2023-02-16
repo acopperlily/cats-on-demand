@@ -5,7 +5,7 @@ const Form = props => {
   return (
     <form onSubmit={props.onSubmit}>
 
-      <div className="inputContainer">
+      {!props.error && <div className="inputContainer">
         <div className="textContainer">
           <label htmlFor="text">Optional message: </label>
           <div className="inputDeleteContainer">
@@ -32,7 +32,7 @@ const Form = props => {
             onChange={e => props.toggleKeep(e)} 
           />
         </div>
-      </div>
+      </div>}
 
     <button type='submit'>Show Me Your Kitties</button>
   </form>
