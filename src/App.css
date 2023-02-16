@@ -1,8 +1,8 @@
 :root {
   --light-bg-color: rgb(220, 247, 249);
   --dark-bg-color: rgb(179, 226, 246);
-  --medium-teal-color: rgb(0, 161, 179);
-  --dark-teal-color: rgb(1, 80, 96);
+  --medium-teal-color: #00a1b3;
+  --dark-teal-color: #015060;
   --highlight-color: rgb(46, 200, 217);
 }
 *, *::after, *::before {
@@ -222,7 +222,7 @@ label {
 }
 
 input {
-  padding: 0.1rem 0 0.2rem 0;
+  padding: 0.2rem 0 0.2rem 0;
   width: auto;
   border: none;
   border-radius: 5px;
@@ -266,7 +266,7 @@ input {
 
 
 /* To create surface of toggle button */
-.toggle:after {
+.toggle::after {
 	content: '';
 	width: 48px;
 	height: 26px;
@@ -280,7 +280,7 @@ input {
 
 
 /* Contents before checkbox to create toggle handle */
-.toggle:before {
+.toggle::before {
 	content: '';
 	width: 26px;
 	height: 26px;
@@ -293,18 +293,20 @@ input {
 	border-radius: 50%;
 	background: var(--light-bg-color);
 	box-shadow: inset -1px -1px 3px var(--dark-teal-color);
+  transition: all 0.5s ease-in-out;
 }
 
 
 /* Shift the handle to left on check event */
-.toggle:checked:before {
+.toggle:checked::before {
 	left: 1rem;
   left: calc(0.8rem + 1vw);
 	box-shadow: inset -1px -1px 3px var(--dark-teal-color);
+  transition: all 0.5s ease-in-out;
 }
 /* Background color when toggle button will be active */
-.toggle:checked:after {
-	background: var(--medium-teal-color);
+.toggle:checked::after {
+	background-color: var(--medium-teal-color);
 }
 
 button {
@@ -328,7 +330,7 @@ button {
 }
 
 button:hover {
-  animation: 0.5s fadeIn;
+  transition: all 0.5s ease;
   background: var(--highlight-color);
   box-shadow: inset 0px -5px 7px 0 var(--dark-teal-color);
 }
@@ -337,24 +339,6 @@ button:active {
   transform: scale(0.98);
   background: var(--medium-teal-color);
   box-shadow: inset 0px -5px 3px var(--dark-teal-color);
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    filter: brightness(90%);
-  }
-  100% {
-    filter: brightness(100%);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    filter: brightness(90%);
-  }
-  100% {
-    filter: brightness(100%);
-  }
 }
 
 footer {

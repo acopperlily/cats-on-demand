@@ -19,9 +19,9 @@ const Modal = props => {
 
         <p>Demanding a cat is as simple as smashing that big silly button.</p>
 
-        <p>You can demand a cat with or without a message. Enter a word or phrase into the text field or click the "X" to delete.**</p>
+        <p>You can demand a cat with or without a message. Click the "X" to delete the text field, then you can either leave it blank or type your own message.**</p>
 
-        <p>Like the kitty but not the text? You can demand the same cat with a different message. Simply check the box and type something else.</p>
+        <p>Like the kitty but not the text? You can demand the same cat with a different message. Simply toggle the switch and type something else.</p>
 
         <p><small>* <a href="https://cataas.com/#/" target='_blank' rel='noopener'>Cataas</a> is currently in "under recovery mode", and there may be interruptions in service as they migrate to a new server. If you encounter any errors, admire my darling Pele and try demanding a cat some other time.***</small></p>
 

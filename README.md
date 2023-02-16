@@ -10,11 +10,11 @@ Do you demand cats? Users can request cats freshly served up by Cataas (Cat as a
 
 **Tech used:** HTML, CSS, JavaScript, React, Fetch API
 
-I implemented a fetch request to Cataas API to retrieve cat photos.
+I implemented a fetch request to Cataas API to retrieve cat photos. Users can input text to be displayed on the photos.
 
 ## Optimizations
 
-I would like to add an option to keep the photo but change the text.
+I would like to improve mobile responsiveness.
 
 ## Lessons Learned
 
