@@ -14,6 +14,7 @@
 
 body {
   width: 100%;
+  min-height: 100vh;
   color: white;
   color: var(--light-color);
   font-family: 'Roboto', sans-serif;
@@ -26,7 +27,7 @@ body {
 
 .wrapper {
   min-height: 100vh;
-  background-color: black;
+  /* background-color: black; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -165,7 +166,7 @@ h3 {
 }
 
 .imageContainer {
-  width: 95%;
+  max-width: 95%;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -175,9 +176,8 @@ h3 {
 }
 
 .image {
-  max-width: 100%;
-  height: inherit;
   object-fit: contain;
+  overflow: hidden;
   box-shadow: 3px 5px 7px 0px rgb(106, 106, 106);
 }
 
@@ -259,61 +259,39 @@ input {
   color: var(--medium-teal-color);
 }
 
-/* Toggle Button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: rgb(180, 210, 212);
+  border-radius: 100px;
+
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  top: 1px;
+  left: 1px;
+  transition: all 200ms;	
+  box-shadow: inset -1px -1px 3px var(--dark-teal-color);
+}
+
+.toggle:checked + .switch::after {
+  left: 20px;
+}
+
+.toggle:checked + .switch {
+  background-color: var(--medium-teal-color);
+}
+
 .toggle {
-	-webkit-appearance: none;
-	-webkit-tap-highlight-color: transparent;
-	position: relative;
-	border: 0;
-	outline: 0;
-	cursor: pointer;
-	margin-top: 0.4rem;
-  background: transparent;
-}
-
-
-/* To create surface of toggle button */
-.toggle::after {
-	content: '';
-	width: 48px;
-	height: 26px;
-  width: calc(1.8rem + 2vw);
-  height: calc(1rem + 1vw);
-	display: inline-block;
-	background: rgba(145, 192, 197, 0.51);
-	border-radius: 18px;
-	clear: both;
-}
-
-
-/* Contents before checkbox to create toggle handle */
-.toggle::before {
-	content: '';
-	width: 26px;
-	height: 26px;
-  width: calc(1rem + 1vw);
-  height: calc(1rem + 1vw);
-	display: block;
-	position: absolute;
-	left: 0;
-	top: 10;
-	border-radius: 50%;
-	background: var(--light-bg-color);
-	box-shadow: inset -1px -1px 3px var(--dark-teal-color);
-  transition: all 0.5s ease-in-out;
-}
-
-
-/* Shift the handle to left on check event */
-.toggle:checked::before {
-	left: 1rem;
-  left: calc(0.8rem + 1vw);
-	box-shadow: inset -1px -1px 3px var(--dark-teal-color);
-  transition: all 0.5s ease-in-out;
-}
-/* Background color when toggle button will be active */
-.toggle:checked::after {
-	background-color: var(--medium-teal-color);
+  display: none;
 }
 
 button {

@@ -9,7 +9,7 @@ import Form from './components/Form';
 function App() {
   const [imageURL, setImageURL] = React.useState('');
   const [imageID, setImageID] = React.useState('');
-  const [text, setText] = React.useState('U CAN HAZ KITTEH');
+  const [text, setText] = React.useState('LOOK AT MEOW');
   const [triggerFetch, setTriggerFetch] = React.useState(false);
   const [inputWidth, setInputWidth] = React.useState(`${text.length + 2}ch`);
   const [toggleModal, setToggleModal] = React.useState(false);

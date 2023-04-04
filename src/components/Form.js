@@ -31,6 +31,7 @@ const Form = props => {
             id="keep" 
             onChange={e => props.toggleKeep(e)} 
           />
+          <label htmlFor="keep" className="switch"></label>
         </div>
       </div>}
 
