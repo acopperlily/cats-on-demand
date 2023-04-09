@@ -3,40 +3,43 @@ import { FaTimesCircle } from "react-icons/fa";
 
 const Form = props => {
   return (
-    <form onSubmit={props.onSubmit}>
+    <section className="request container">
+      <h2 className="request__title">Demand a cat</h2>
 
-      {!props.error && <div className="inputContainer">
-        <div className="textContainer">
-          <label htmlFor="text">Optional message: </label>
-          <div className="inputDeleteContainer">
-            <input
-              type="text" 
-              id='text'
-              value={props.text} 
-              onChange={props.onChange}
-              style={{width: `${props.inputWidth}`}}
-            />
-            <div className="deleteContainer">
-              <FaTimesCircle className="delete" onClick={props.deleteInput}/>
+      <form className="request__form" onSubmit={props.onSubmit}>
+        {!props.error && <div className="request__input-container">
+          <div className="request__textfield-container">
+            <label className="request__label" htmlFor="text">Message (optional) </label>
+            <div className="request__text-container">
+              <input
+                type="text" 
+                id="text"
+                value={props.text} 
+                onChange={props.onChange}
+                // style={{width: `${props.inputWidth}`}}
+              />
+              <div className="request__delete-container">
+                <FaTimesCircle className="request__delete-icon" onClick={props.deleteInput}/>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="checkContainer">
-          <label htmlFor="keep">Keep kitty, change message:</label>
-          <input
-            className="toggle"
-            type="checkbox" 
-            name="keep" 
-            id="keep" 
-            onChange={e => props.toggleKeep(e)} 
-          />
-          <label htmlFor="keep" className="switch"></label>
-        </div>
-      </div>}
+          <div className="request__check-container">
+            <label className="request__label" htmlFor="keep">Keep kitty, change message</label>
+            <input
+              className="request__toggle"
+              type="checkbox" 
+              name="keep" 
+              id="keep" 
+              onChange={e => props.toggleKeep(e)} 
+            />
+            <label htmlFor="keep" className="request__switch"></label>
+          </div>
+        </div>}
 
-    <button type='submit'>Show Me Your Kitties</button>
-  </form>
+        <button className="request__button" type='submit'>Show Me Your Kitties</button>
+      </form>
+    </section>
   );
 };
 
