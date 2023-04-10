@@ -9,10 +9,10 @@ const Image = props => {
   const cat = <img src={path} className='image' />;
 
   return (
-    <div className="imageContainer" >
+    <section className="image__container" >
       {(props.isLoading || props.error) ? <Message error={props.error} isLoading={props.isLoading} /> : cat}
 
-    </div>
+    </section>
   );
 };
 

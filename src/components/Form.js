@@ -16,7 +16,6 @@ const Form = props => {
                 id="text"
                 value={props.text} 
                 onChange={props.onChange}
-                // style={{width: `${props.inputWidth}`}}
               />
               <div className="request__delete-container">
                 <FaTimesCircle className="request__delete-icon" onClick={props.deleteInput}/>

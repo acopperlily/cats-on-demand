@@ -30,7 +30,6 @@ body {
 
 .wrapper {
   min-height: 100vh;
-  /* background-color: black; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,21 +45,17 @@ header {
 }
 
 .header__title {
+  text-align: center;
   color: var(--light-color);
   font-family: var(--ff-header);
   font-size: 1.5rem;
   font-size: clamp(1rem, 1rem + 2vmin, 2rem);
   font-weight: 800;
+  line-height: 1;
   letter-spacing: -0.05ch;
   grid-column: 2 / 3;
-  line-height: 2rem;
   padding: 0.5rem;
   padding: clamp(0.5rem, 0.5rem + 1vmin, 1rem);
-}
-
-h2 {
-  color: var(--dark-teal-color);
-  font-weight: 900;
 }
 
 .infoContainer {
@@ -88,11 +83,30 @@ main {
   flex: 1 0 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  /* padding: 2rem 0 1rem 0;s */
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 95%;
+}
+
+.main__container {
+  background-color: var(--light-color);
+  margin-block: 2em 4em;
+  /* border: 1px solid red; */
+  flex: 1 0 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+  row-gap: clamp(4em, 1em + 2vmin, 5em);
+  column-gap: clamp(4em, 2em + 5vmax, 10em);
+}
+
+.main__container > * {
+  /* border: 1px dotted blueviolet; */
 }
 
 .modal {
@@ -163,26 +177,24 @@ h3 {
   font-size: calc(0.5rem + 1vw);
 }
 
-.message {
+.image__message {
   color: var(--dark-teal-color);
-  /* font-family: 'Montserrat', sans-serif; */
   font-family: var(--ff);
   font-size: 1.2rem;
   font-size: calc(1rem + 1vw);
   font-weight: 800;
   letter-spacing: -0.05ch;
-  padding: 0 2rem;
 }
 
-.imageContainer {
-  max-width: 95%;
-  height: 50vh;
+.image__container {
+  max-width: 100%;
+  max-height: 60vh;
+  /* height: min(100%, 50vh); */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  /* flex: 1; */
 }
 
 .image {
@@ -192,18 +204,14 @@ h3 {
   box-shadow: 3px 5px 7px 0px rgb(106, 106, 106);
 }
 
-.error {
+.image__error {
   height: 70%;
   object-fit: contain;
 }
 
 .request {
-  /* max-width: 100%; */
-  /* width: 100%; */
-  /* border: 1px solid red; */
-  /* background-color: antiquewhite; */
-  width: min(95%, 400px);
-  margin: 0 auto 1em auto;
+  width: min(100%, 30em);
+  margin: 0 auto;
   flex: 1;
 }
 
@@ -215,18 +223,13 @@ h3 {
   font-size: 2rem;
   font-size: clamp(2rem, 1.5rem + 2vmin, 4rem);
   font-weight: 800;
+  line-height: 1em;
   letter-spacing: -0.08rem;
   margin-bottom: 0.8em;
-  /* background-color: pink; */
 }
 
 .request__form {
-  /* border: 1px dotted purple; */
-  /* padding: 1rem 0.5rem; */
-  /* width: 100%; */
-  /* font-size: 0.7rem; */
   width: min(100%, 30em);
-  /* font-size: calc(0.6rem + 1vw); */
 }
 
 .request__label {
@@ -236,51 +239,28 @@ h3 {
   color: var(--dark-teal-color);
 }
 
-.request__input-container {
-  /* border: 1px dashed yellowgreen; */
-  /* display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.3rem; */
-}
-
 .request__text-container {
   margin: 0.4em 0 1.5em 0;
   width: 100%;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
-  /* gap: 0.5rem; */
 }
-
-.request__textfield-container {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.3rem; */
-} 
 
 .request__check-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* gap: 0.5rem; */
 }
 
 input {
   padding: 0.4rem;
-  /* margin: 0.2em 0 1em 0; */
-  /* width: min(100%, 20em); */
   flex: 1;
   border: none;
-  /* border: 1px solid var(--medium-teal-color); */
   border-radius: 1px;
   color: var(--dark-teal-color);
   font-family: var(--ff);
   font-size: 1rem;
   font-weight: 500;
-  /* text-align: center; */
   background-color: var(--light-bg-color);
 }
 
@@ -408,7 +388,7 @@ a:hover {
   padding-left: 0.5rem;
 }
 
-.loading {
+.image__loading {
   margin-top: 2rem;
   width: 50px;
   height: auto;
@@ -442,23 +422,6 @@ a:hover {
   .links {
     padding-top: 0.2rem;
   }
-}
-
-@media screen and (orientation: landscape) and (max-height: 500px) {
-  main {
-    flex-direction: row;
-    padding: 0 0.5rem;
-  }
-
-  .imageContainer {
-    height: 60vh;
-    width: 60vw;
-  }
-
-  button {
-    /* font-size: 1.2rem; */
-  }
-
 }
 
 @media screen and (min-width: 800px) and (min-height: 500px) {
@@ -495,21 +458,22 @@ a:hover {
   }
 }
 
-@media (orientation: landscape) {
-  main {
+@media (orientation: landscape) and (min-width: 35em) {
+  .main__container {
     flex-direction: row;
-    column-gap: clamp(2rem, 2rem + 5vmax, 10rem);
+    /* column-gap: clamp(2rem, 2rem + 5vmax, 10rem); */
     /* justify-content: center; */
   }
 
-  .imageContainer {
+  .image__container {
     flex: 1;
+    /* align-items: flex-end; */
     /* background-color: pink; */
   }
 
   .image {
     /* border: 1px solid red; */
-    margin-left: auto;
+    /* margin-left: auto; */
   }
 
   .request {

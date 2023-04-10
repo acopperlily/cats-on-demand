@@ -11,7 +11,6 @@ function App() {
   const [imageID, setImageID] = React.useState('');
   const [text, setText] = React.useState('LOOK AT MEOW');
   const [triggerFetch, setTriggerFetch] = React.useState(false);
-  const [inputWidth, setInputWidth] = React.useState(`${text.length + 2}ch`);
   const [toggleModal, setToggleModal] = React.useState(false);
   const [error, setError] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
@@ -55,28 +54,16 @@ function App() {
 
   const handleChange = e => {
     setText(e.target.value);
-    let length = e.target.value.length;
-    if (length > 5) {
-      length *= 1.7;
-    } else {
-      length = 9;
-    }
-    setInputWidth(`${length}ch`);
   };
 
   const deleteInput = e => {
     setText('');
-    setInputWidth('9ch');
   };
 
   const toggleKeep = e => {
     console.log('checked?', e.target.checked);
     setKeepImage(e.target.checked);
   };
-
-  console.log('text:', text);
-  console.log('len', text.length);
-  console.log('width:', inputWidth);
 
   const handleClick = () => {
     console.log('modal', toggleModal);
@@ -101,11 +88,11 @@ function App() {
         <Header handleClick={handleClick}/>
 
         <main>
-          
-          <Image url={imageURL} error={error} isLoading={isLoading} />
+          <div className="container main__container">
+            <Image url={imageURL} error={error} isLoading={isLoading} />
 
-          <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} inputWidth={inputWidth} toggleKeep={toggleKeep} error={error} />
-
+            <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} toggleKeep={toggleKeep} error={error} />
+          </div>
         </main>
 
         <Footer />

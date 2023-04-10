@@ -11,16 +11,16 @@ const Message = props => {
   if (props.isLoading) {
     path = loadPele;
     warning = 'Loading...';
-    style = 'loading';
+    style = 'image__loading';
   } else {
     path = errorPele;
     warning = 'Something went wrong...';
-    style = 'error';
+    style = 'image__error';
   }
 
   return (
     <>
-      <h2 className="message">{warning}</h2>
+      <h2 className="image__message">{warning}</h2>
       <img src={path} alt="" className={style}/>
     </>
   );
