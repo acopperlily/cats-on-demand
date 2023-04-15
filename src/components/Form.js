@@ -4,12 +4,14 @@ import { FaTimesCircle } from "react-icons/fa";
 const Form = props => {
   return (
     <section className="request container">
-      <h2 className="request__title">Demand a cat</h2>
+      {/* <h2 className="request__title">You want a cat, and you want it right meow</h2> */}
 
       <form className="request__form" onSubmit={props.onSubmit}>
+        <h2 className="request__title">Demand a cat</h2>
+        <p className="request__sub">You want cat, and you want it right meow.<br></br>Go on and smash that big silly button.</p>
         {!props.error && <div className="request__input-container">
           <div className="request__textfield-container">
-            <label className="request__label" htmlFor="text">Message (optional) </label>
+            <label className="request__label clickable" htmlFor="text">Message (optional) </label>
             <div className="request__text-container">
               <input
                 type="text" 
@@ -17,14 +19,14 @@ const Form = props => {
                 value={props.text} 
                 onChange={props.onChange}
               />
-              <div className="request__delete-container">
+              <div className="request__delete-container clickable">
                 <FaTimesCircle className="request__delete-icon" onClick={props.deleteInput}/>
               </div>
             </div>
           </div>
 
           <div className="request__check-container">
-            <label className="request__label" htmlFor="keep">Keep kitty, change message</label>
+            <label className="request__label clickable" htmlFor="keep">Keep kitty, change message</label>
             <input
               className="request__toggle"
               type="checkbox" 
@@ -32,7 +34,7 @@ const Form = props => {
               id="keep" 
               onChange={e => props.toggleKeep(e)} 
             />
-            <label htmlFor="keep" className="request__switch"></label>
+            <label htmlFor="keep" className="request__switch clickable"></label>
           </div>
         </div>}
 
