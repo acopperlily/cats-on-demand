@@ -105,12 +105,13 @@ main {
   /* border: 1px dotted blueviolet; */
 }
 
-.modal {
+.modal__container {
   color: var(--light-color);
-  padding: 0.5rem;
+  padding: 0.5em;
   width: 90%;
   height: 90%;
   max-width: 680px;
+  max-height: 700px;
   background-color: var(--dark-teal-color);
   border-radius: 20px;
   position: absolute;
@@ -125,11 +126,11 @@ main {
   box-shadow: 0px 0px 20px 5px var(--highlight-color);
 }
 
-.modal a {
+.modal__link {
   color: var(--highlight-color);
 }
 
-.exitContainer {
+.modal__exit-container {
   width: 2.2rem;
   height: 2.2rem;
   margin-left: auto;
@@ -140,37 +141,45 @@ main {
   align-items: center;
 }
 
-.exit {
+.modal__exit-icon {
   color: var(--highlight-color);
   font-size: 1.4rem;
-  opacity: 1;
-  transition: all 200ms ease-in-out;
 }
 
-.exit:hover,
-.exit:focus {
-  opacity: 0.7;
-}
-
-h3 {
+.modal__title {
   font-family: var(--ff-header);
   text-align: center;
   font-size: 1.2rem;
   font-size: calc(1rem + 1vw);
+  font-size: clamp(1rem, 1rem + 2vmin, 3rem);
   font-weight: 700;
   letter-spacing: -0.05ch;
-  padding: 0 1rem 1rem 1rem;
+  padding: 0 1em;
+  margin-bottom: 1em;
 }
 
-.pContainer {
+.modal__body {
   padding: 0.5rem;
   padding: 0 calc(0.1rem + 2vw);
+  padding: 0 clamp(0.5em, 0.2em + 2vmax, 2em);
 }
 
-.pContainer p {
-  padding: 0.5rem 0;
+.modal__body p {
+  padding: 0.7em 0;
+  padding: clamp(0.7em, 0.7em + 1vmin, 1em) 0;
   font-size: 0.8rem;
   font-size: calc(0.5rem + 1vw);
+  font-size: clamp(0.6rem, 0.6rem + 1vmin, 1rem);
+}
+
+.modal__main {
+  margin-bottom: 2em;
+}
+
+.modal__num {
+  color: var(--highlight-color);
+  font-family: var(--ff-header);
+  margin-right: 0.3em;
 }
 
 .image__message {
@@ -354,7 +363,6 @@ input {
 
 .request__button:hover,
 .request__button:focus {
-  /* transition: all 0.5s ease-in-out; */
   background-color: var(--dark-teal-color);
   box-shadow: inset 0px -5px 7px 0 var(--dark-teal-color);
 }
@@ -373,15 +381,9 @@ footer {
   font-size: 0.8rem;
   font-size: calc(0.5rem + 1vw);
   font-size: clamp(0.5rem, 0.5rem + 1vw, 1rem);
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* gap: 0.5rem; */
 }
 
 .footer__container {
-  /* border: 1px solid yellow; */
   width: 80%;
   margin-inline: auto;
   display: flex;
@@ -439,26 +441,6 @@ a {
   to {
     transform: rotate(360deg);
   }
-}
-
-@media screen and (min-width: 800px) and (min-height: 500px) {
-
-  .modal {
-    height: 80%;
-  }
-
-  h3 {
-    font-size: 1.8rem;
-  }
-
-  .pContainer {
-    padding: 1rem 2rem;
-  }
-
-  .pContainer p {
-    font-size: 1rem;
-  }
-
 }
 
 @media (orientation: landscape) and (min-width: 35em) {
