@@ -208,7 +208,7 @@ main {
   max-width: 100%;
   object-fit: contain;
   overflow: hidden;
-  box-shadow: 3px 5px 7px 0px rgb(106, 106, 106);
+  box-shadow: 3px 5px 8px 0px rgb(106, 106, 106);
 }
 
 .image__error {
@@ -245,6 +245,7 @@ main {
   font-size: 1.1rem;
   font-size: clamp(0.5rem, 0.5rem + 1vmin, 1.2rem);
   font-weight: 600;
+  /* line-height: 130%; */
   letter-spacing: -0.05em;
   margin-bottom: 2em;
 }
@@ -356,6 +357,7 @@ input {
   font-size: 1.1rem;
   font-size: clamp(1.1rem, 0.7rem + 2vmin, 1.7rem);
   font-weight: 800;
+  line-height: 100%;
   letter-spacing: -0.05ch;
   box-shadow: inset 0px -5px 10px 3px var(--dark-teal-color);
   transition: var(--trans-anim);
@@ -378,18 +380,20 @@ footer {
   padding: 0.8rem;
   padding: calc(0.8rem + 1vh);
   background-color: var(--dark-teal-color);
+  font-family: var(--ff-header);
   font-size: 0.8rem;
   font-size: calc(0.5rem + 1vw);
   font-size: clamp(0.5rem, 0.5rem + 1vw, 1rem);
 }
 
 .footer__container {
-  width: 80%;
+  width: min(80%, 30em);
   margin-inline: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.3em;
+  column-gap: 0.3em;
+  row-gap: 0.7em;
 }
 
 span {
@@ -401,9 +405,12 @@ a {
   color: var(--light-color);
 }
 
+.footer__links {
+  margin-top: 0.05em;
+}
+
 .footer__icon {
-  margin-top: 0.5em;
-  padding-left: 0.5em;
+  padding-left: 0.6em;
   font-size: clamp(0.6rem, 0.6rem + 1vw, 1.1rem);
 }
 
@@ -446,22 +453,10 @@ a {
 @media (orientation: landscape) and (min-width: 35em) {
   .main__container {
     flex-direction: row;
-    /* column-gap: clamp(2rem, 2rem + 5vmax, 10rem); */
-    /* justify-content: center; */
   }
 
   .image__container {
     flex: 1;
-    /* align-items: flex-end; */
-    /* background-color: pink; */
   }
 
-  .image {
-    /* border: 1px solid red; */
-    /* margin-left: auto; */
-  }
-
-  .request {
-    /* flex: 1; */
-  }
 }

@@ -46,7 +46,7 @@ const Modal = props => {
           <p id="fn3">
             <small>
               <span className="modal__num">3</span>
-              Pele was my bestest buddy for over fourteen years. Despite her resemblance to a soccer ball, Pele was named after the Hawaiian volcano goddess—not the Brazilian football legend Pelé. This site is dedicated to my goofy little baby.
+              Pele was my bestest buddy for over fourteen years. Despite her resemblance to a traditional soccer ball, Pele was named after the Hawaiian volcano goddess—not the Brazilian football legend Pelé. This site is dedicated to my goofy little baby.
             </small>
           </p>
         </div>
