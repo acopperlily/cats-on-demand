@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -7,14 +7,58 @@ import Image from './components/Image';
 import Form from './components/Form';
 
 function App() {
-  const [imageURL, setImageURL] = React.useState('');
-  const [imageID, setImageID] = React.useState('');
-  const [text, setText] = React.useState('AYYY');
-  const [triggerFetch, setTriggerFetch] = React.useState(false);
-  const [toggleModal, setToggleModal] = React.useState(false);
-  const [error, setError] = React.useState(false);
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [keepImage, setKeepImage] = React.useState(false);
+  const [imageURL, setImageURL] = useState('');
+  const [imageID, setImageID] = useState('');
+  const [text, setText] = useState('AYYY');
+  const [toggleModal, setToggleModal] = useState(false);
+  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [keepImage, setKeepImage] = useState(false);
+
+
+  // URL Info
+  const domain = 'https://cataas.com/cat';
+  const textParam = '/says/';    
+  const fontParam = '?font=Impact&fontSize=50&fontColor=%23FFF';
+  const jsonParam = '&json=true';
+
+  const getFetchURL = () => {
+    let url = domain;
+    if (keepImage) url += '/' + imageID;
+    if (text) url += textParam + text;
+    url += fontParam + jsonParam;
+    return url;
+  }
+
+  const getImageURL = () => {
+    let url = domain + '/' + imageID;
+    if (text) url += textParam + text + fontParam;
+    setImageURL(url);
+  }
+
+  // Test function
+  const fetchCat = async () => {
+    setIsLoading(true);
+    let fetchURL = getFetchURL();
+    try {
+      const res = await fetch(fetchURL);
+      if (!res.ok) {
+        throw new Error('oops');
+      }
+      const data = await res.json();
+      console.log('data:', data);
+      setImageID(data._id);
+      setError(false);
+      getImageURL();
+    } catch (err) {
+      console.log('error:', err);
+      setError(true);
+    } finally {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
+    }
+  }
 
   // Remove problematic chars before fetching
   const sanitizeInput = () => {
@@ -22,35 +66,10 @@ function App() {
     setText(oldText);
   };
 
-  React.useEffect(() => {
-    setIsLoading(true);
-    const makeFetchHappen = async () => {
-      let url = `https://cataas.com/cat/`;
-      if (keepImage) url += imageID;
-      try {
-        const res = await fetch(`${url}/says/${text || ' '}?json=true`);
-        const data = await res.json();
-        console.log('data:', data);
-        setImageURL(data.url);
-        setImageID(data._id);
-        setError(false);
-      } catch (err) {
-        console.log('error:', err);
-        setError(true);
-      } finally {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 500);
-      }
-    }
-    makeFetchHappen();
-  }, [triggerFetch]);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    sanitizeInput();
-    setTriggerFetch(!triggerFetch);
-  };
+  // Fetch cat photo on page load
+  useEffect(() => {
+    fetchCat();
+  }, []);
 
   const handleChange = e => {
     setText(e.target.value);
@@ -60,14 +79,21 @@ function App() {
     setText('');
   };
 
-  const toggleKeep = e => {
-    console.log('checked?', e.target.checked);
-    setKeepImage(e.target.checked);
+  const toggleKeep = checked => {
+    console.log(checked)
+    setKeepImage(checked);
   };
 
   const handleClick = () => {
     console.log('modal', toggleModal);
     setToggleModal(!toggleModal);
+  };
+
+  // Test click function
+  const handleSubmit = e => {
+    e.preventDefault();
+    sanitizeInput();
+    fetchCat();
   };
 
 
@@ -89,9 +115,9 @@ function App() {
 
         <main>
           <div className="container main__container">
-            <Image url={imageURL} error={error} isLoading={isLoading} />
+            <Image image={imageURL} error={error} isLoading={isLoading} />
 
-            <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} toggleKeep={toggleKeep} error={error} />
+            <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} keepImage={keepImage} error={error} onToggleKeep={toggleKeep} />
           </div>
         </main>
 

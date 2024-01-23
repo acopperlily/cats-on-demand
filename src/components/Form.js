@@ -2,6 +2,12 @@ import React from "react";
 import { FaTimesCircle } from "react-icons/fa";
 
 const Form = props => {
+  console.log('form props:', props)
+
+  const handleToggleSwitch = e => {
+    props.onToggleKeep(e.target.checked);
+  }
+
   return (
     <section className="request container">
       {/* <h2 className="request__title">You want a cat, and you want it right meow</h2> */}
@@ -32,7 +38,9 @@ const Form = props => {
               type="checkbox" 
               name="keep" 
               id="keep" 
-              onChange={e => props.toggleKeep(e)} 
+              checked={props.keepImage}
+              // onChange={e => props.toggleKeep(e)} 
+              onChange={handleToggleSwitch}
             />
             <label htmlFor="keep" className="request__switch clickable"></label>
           </div>

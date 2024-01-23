@@ -2,13 +2,13 @@ import React from "react";
 import errorPele from '../../src/errorPele.jpg';
 import loadPele from '../../src/pele.png';
 
-const Message = props => {
+const Message = ({ error, isLoading }) => {
 
   let path;
   let warning;
   let style;
 
-  if (props.isLoading) {
+  if (isLoading) {
     path = loadPele;
     warning = 'Loading...';
     style = 'image__loading';

@@ -1,16 +1,15 @@
 import React from 'react';
 import Message from './Message';
 
-const Image = props => {
-  const domain = 'https://cataas.com';
+const Image = ({ image, error, isLoading }) => {
+  // Example url to display photo
+  // https://cataas.com/cat/cCJzyTTdiFMyIyHG/says/ayyy?font=Impact&fontSize=50&fontColor=%23FFF
 
-  let path = domain + props.url;
-
-  const cat = <img src={path} className='image' />;
+  const cat = <img src={image} className='image' />;
 
   return (
     <section className="image__container" >
-      {(props.isLoading || props.error) ? <Message error={props.error} isLoading={props.isLoading} /> : cat}
+      {(isLoading || error) ? <Message error={error} isLoading={isLoading} /> : cat}
 
     </section>
   );
