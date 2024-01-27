@@ -56,7 +56,6 @@ function App() {
 
       Without imageID and no text: https://cataas.com/cat?fontSize=50&fontColor=%23FFF&json=true
     */
-    // url += jsonParam;
     console.log('fetch url:', url);
     return url;
   }
@@ -77,36 +76,8 @@ function App() {
     return url;
   }
 
-  // Test function
-  const fetchCat = async () => {
-    setIsLoading(true);
-    let fetchURL = getFetchURL();
-    let displayURL;
-    try {
-      const res = await fetch(fetchURL);
-      if (!res.ok) {
-        setError(true);
-      }
-      const data = await res.json();
-      console.log('data:', data);
-      setImageID(data._id);
-      // setError(false);
-      // displayURL = getImageURL(data._id);
-      // setImageURL(displayURL);
-    } catch (err) {
-      console.log('error:', err);
-      setError(true);
-    } finally {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-      setError(false);
-    }
-  };
-
-  // Fetch cat photo on page load
+  // Fetch cat photo
   useEffect(() => {
-    // let ignore = false;
     const controller = new AbortController();
     const signal = controller.signal;
 
@@ -119,15 +90,9 @@ function App() {
         if (!res.ok) {
           setError(true);
         }
+        console.log('response:', res);
         const data = await res.json();
         console.log('data:', data);
-        // if (!ignore) {
-        //   setImageID(data._id);
-        // // setError(false);
-        //   // displayURL = getImageURL();
-        //   // setImageURL(displayURL);
-        //   setImageURL(getImageURL(data._id));
-        // }
         setImageID(data._id);
         setImageURL(getImageURL(data._id));
       } catch (err) {
@@ -141,18 +106,10 @@ function App() {
       }
     };
     getCat();
-    // setImageURL(getImageURL());
     return () => {
-      // ignore = true;
       controller.abort();
     }
   }, [triggerFetch]);
-
-  // useEffect(() => {
-  //   const url = getImageURL();
-  //   setImageURL(url);
-  //   setTriggerFetch(false);
-  // }, [imageID, triggerFetch]);
 
    // Remove problematic chars before fetching
   const sanitizeInput = () => {
@@ -177,7 +134,6 @@ function App() {
   const handleSubmit = e => {
     e.preventDefault();
     sanitizeInput();
-    // fetchCat();
     setTriggerFetch(!triggerFetch);
     console.log('handle submit text:', text);
   };
