@@ -246,7 +246,7 @@ main {
   font-size: 1.1rem;
   font-size: clamp(0.5rem, 0.5rem + 1vmin, 1.2rem);
   font-weight: 600;
-  /* line-height: 130%; */
+  line-height: 130%;
   letter-spacing: -0.05em;
   margin-bottom: 2em;
 }
@@ -405,6 +405,10 @@ footer {
 
 span {
   padding-right: 0.2rem;
+}
+
+.footer__daterange {
+  padding-right: 0.8rem;
 }
 
 a {

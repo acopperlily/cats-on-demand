@@ -61,10 +61,9 @@ function App() {
     return url;
   }
 
-  const getImageURL = (id) => {
+  const getImageURL = id => {
 
     // https://cataas.com/cat/imageID
-    // if (!imageID) return;
     let url = domain + '/' + id;
 
     /*
@@ -79,6 +78,7 @@ function App() {
 
   // Fetch cat photo
   useEffect(() => {
+    // This cancels erroneous requests
     const controller = new AbortController();
     const signal = controller.signal;
 
@@ -93,7 +93,9 @@ function App() {
         console.log('response:', res);
         const data = await res.json();
         console.log('data:', data);
-        setImageID(data._id);
+        if (imageID !== data.id) {
+          setImageID(data._id);
+        }
         setImageURL(getImageURL(data._id));
         setError(null);
       } catch (err) {
@@ -105,7 +107,9 @@ function App() {
         }, 500);
       }
     };
+
     getCat();
+
     return () => {
       controller.abort();
     }
