@@ -4,9 +4,8 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Modal from './components/Modal';
 import Image from './components/Image';
-import Loading from './components/Loading';
-import Error from './components/Error';
 import Form from './components/Form';
+import Message from './components/Message';
 
 const urlBreakdown = {
   domain: 'https://cataas.com/cat',
@@ -161,12 +160,10 @@ function App() {
 
         <main>
           <div className="container main__container">
-            {/*{isLoading && <Loading />}
-            {error && <Error />}
-            {imageURL && <Image image={imageURL} />}*/}
-            {isLoading ? <Loading /> : error ? <Error /> : <Image image={imageURL} />}
 
-            <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} keepImage={keepImage} error={error} onToggleKeep={setKeepImage} isLoading={isLoading}/>
+            {(isLoading || error) ? <Message isLoading={isLoading} error={error} /> : <Image image={imageURL} />}
+
+            <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} keepImage={keepImage} onToggleKeep={setKeepImage} isLoading={isLoading} error={error} />
           </div>
         </main>
 
