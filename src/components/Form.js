@@ -41,7 +41,13 @@ const Form = props => {
           </div>
         </div>}
 
-        <button className="request__button" type='submit'>Show Me Your Kitties</button>
+        <button
+          className="request__button" 
+          type='submit'
+          disabled={props.isLoading}
+        >
+          Show Me Your Kitties
+        </button>
       </form>
     </section>
   );

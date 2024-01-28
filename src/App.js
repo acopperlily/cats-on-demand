@@ -4,6 +4,8 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Modal from './components/Modal';
 import Image from './components/Image';
+import Loading from './components/Loading';
+import Error from './components/Error';
 import Form from './components/Form';
 
 const urlBreakdown = {
@@ -21,7 +23,7 @@ function App() {
   const [imageURL, setImageURL] = useState(null);
   const [triggerFetch, setTriggerFetch] = useState(false);
   const [toggleModal, setToggleModal] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [keepImage, setKeepImage] = useState(false);
   let ref = useRef(0);
@@ -82,27 +84,26 @@ function App() {
     const signal = controller.signal;
 
     const getCat = async () => {
-      setIsLoading(true);
       let fetchURL = getFetchURL();
-      let displayURL;
       try {
         const res = await fetch(fetchURL, { signal });
         if (!res.ok) {
           setError(true);
+          throw new Error('Failed to fetch');
         }
         console.log('response:', res);
         const data = await res.json();
         console.log('data:', data);
         setImageID(data._id);
         setImageURL(getImageURL(data._id));
+        setError(null);
       } catch (err) {
         console.log('error:', err);
-        setError(true);
+        setError(err);
       } finally {
         setTimeout(() => {
           setIsLoading(false);
         }, 500);
-        setError(false);
       }
     };
     getCat();
@@ -133,6 +134,7 @@ function App() {
   // Test click function
   const handleSubmit = e => {
     e.preventDefault();
+    setIsLoading(true);
     sanitizeInput();
     setTriggerFetch(!triggerFetch);
     console.log('handle submit text:', text);
@@ -159,9 +161,12 @@ function App() {
 
         <main>
           <div className="container main__container">
-            <Image image={imageURL} error={error} isLoading={isLoading} />
+            {/*{isLoading && <Loading />}
+            {error && <Error />}
+            {imageURL && <Image image={imageURL} />}*/}
+            {isLoading ? <Loading /> : error ? <Error /> : <Image image={imageURL} />}
 
-            <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} keepImage={keepImage} error={error} onToggleKeep={setKeepImage} />
+            <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} keepImage={keepImage} error={error} onToggleKeep={setKeepImage} isLoading={isLoading}/>
           </div>
         </main>
 
