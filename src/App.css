@@ -212,9 +212,10 @@ main {
 }
 
 .image__error {
-  width: 15vw;
-  height: 10%;
+  /* width: 15vw; */
+  /* height: 10%; */
   /* object-fit: contain; */
+  /* overflow: hidden; */
 }
 
 .request {
