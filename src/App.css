@@ -89,7 +89,7 @@ main {
 
 .main__container {
   background-color: var(--light-color);
-  margin-block: 2em 4em;
+  margin-block: 2em;
   /* border: 1px solid red; */
   /* height: 75vh; */
   flex: 1 0 100%;
@@ -193,8 +193,8 @@ main {
 
 .image__container {
   max-width: 100%;
-  min-height: 40vmax;
-  max-height: 40vmin;
+  min-height: 30vmax;
+  max-height: 30vmin;
   height: min(100%, 50vh);
   display: flex;
   flex-direction: column;
