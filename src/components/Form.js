@@ -11,7 +11,7 @@ const Form = props => {
       <form className="request__form" onSubmit={props.onSubmit}>
         <h2 className="request__title">Demand a cat</h2>
         <p className="request__sub">You want cat, and you want it right meow.<br></br>Go on and smash that big silly button.</p>
-        {!props.status === 'error' && <div className="request__input-container">
+        {props.status !== 'error' && <div className="request__input-container">
           <div className="request__textfield-container">
             <label className="request__label clickable" htmlFor="text">Message (optional) </label>
             <div className="request__text-container">
