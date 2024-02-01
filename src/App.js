@@ -8,7 +8,7 @@ import Form from './components/Form';
 import Message from './components/Message';
 
 const urlBreakdown = {
-  domain: 'https://cataass.com/cat',
+  domain: 'https://cataas.com/cat',
   textParam: '/says/',
   fontParam: '?fontSize=50&fontColor=%23FFF',
   jsonParam: '&json=true'
@@ -22,8 +22,7 @@ function App() {
   const [imageURL, setImageURL] = useState(null);
   const [triggerFetch, setTriggerFetch] = useState(false);
   const [toggleModal, setToggleModal] = useState(false);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [status, setStatus] = useState('loading');
   const [keepImage, setKeepImage] = useState(false);
   let ref = useRef(0);
 
@@ -78,6 +77,7 @@ function App() {
 
   // Fetch cat photo
   useEffect(() => {
+
     // This cancels erroneous requests
     const controller = new AbortController();
     const signal = controller.signal;
@@ -86,8 +86,12 @@ function App() {
       let fetchURL = getFetchURL();
       try {
         const res = await fetch(fetchURL, { signal });
+
+        // Test for gateway timeout
+        // const res = await fetch('https://httpstat.us/504?sleep=10000');
+
         if (!res.ok) {
-          setError(true);
+          setStatus('error');
           throw new Error('Failed to fetch');
         }
         console.log('response:', res);
@@ -97,14 +101,10 @@ function App() {
           setImageID(data._id);
         }
         setImageURL(getImageURL(data._id));
-        setError(null);
+        setStatus(null);
       } catch (err) {
         console.log('error:', err);
-        setError(err);
-      } finally {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 500);
+        setStatus('error');
       }
     };
 
@@ -137,7 +137,7 @@ function App() {
   // Test click function
   const handleSubmit = e => {
     e.preventDefault();
-    setIsLoading(true);
+    setStatus('loading');
     sanitizeInput();
     setTriggerFetch(!triggerFetch);
     console.log('handle submit text:', text);
@@ -165,9 +165,9 @@ function App() {
         <main>
           <div className="container main__container">
 
-            {(isLoading || error) ? <Message isLoading={isLoading} error={error} /> : <Image image={imageURL} />}
+            {status ? <Message status={status} /> : <Image image={imageURL} />}
 
-            <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} keepImage={keepImage} onToggleKeep={setKeepImage} isLoading={isLoading} error={error} />
+            <Form onSubmit={handleSubmit} onChange={handleChange} text={text} deleteInput={deleteInput} keepImage={keepImage} onToggleKeep={setKeepImage} status={status} />
           </div>
         </main>
 

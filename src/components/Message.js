@@ -3,12 +3,12 @@ import loadPele from '../../src/pele.png';
 import errorPele from '../../src/rolyPolyPele.jpg'
 // import errorPele from '../../src/errorPele.jpg';
 
-const Message = ({ isLoading }) => {
+const Message = ({ status }) => {
 
-  let warning = isLoading ? 'Loading...' : 'Something went wrong...';
-  let style = isLoading ? 'image__loading' : 'image';
-  let image = isLoading ? loadPele : errorPele;
-  let alt = isLoading ? 'The spinning head of a cute cow cat' : 'A cute cow cat sitting up';
+  let warning = status === 'loading' ? 'Loading...' : 'Something went wrong...';
+  let style = status === 'loading' ? 'image__loading' : 'image';
+  let image = status === 'loading' ? loadPele : errorPele;
+  let alt = status === 'isLoading' ? 'The spinning head of a cute cow cat' : 'A cute cow cat sitting up';
 
   return (
     <section className="image__container">
