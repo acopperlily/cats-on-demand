@@ -1,13 +1,13 @@
 import React from 'react';
 import { FaTimesCircle } from 'react-icons/fa';
 
-const Modal = props => {
+const Modal = ({ handleClick }) => {
 
   return (
 
     <div className="modal__container">
 
-      <div className="modal__exit-container clickable" onClick={props.handleClick}>
+      <div className="modal__exit-container clickable" onClick={handleClick}>
         <FaTimesCircle className='modal__exit-icon' />
       </div>
 
@@ -15,7 +15,7 @@ const Modal = props => {
 
       <div className="modal__body">
 
-      <div className="modal__main">
+        <div className="modal__main">
           <p>COD is a web application that retrieves cat photos and GIFs from <a href="https://cataas.com/#/" target='_blank' rel='noopener' className='modal__link clickable' >Cataas</a> (Cat as a Service) API. <a href="#fn1"><sup className='modal__num clickable'>1</sup></a></p>
 
           <p>Demanding a cat is as simple as smashing that big silly button.</p>

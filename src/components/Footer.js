@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
+
 import SocialLink from "./SocialLink";
 
 const socialInfo = [
@@ -9,32 +10,37 @@ const socialInfo = [
 ];
 
 function Footer() {
-  const ref = useRef(0);
+
   // Calculate date range
   const startYear = 2022;
   const currentYear = new Date().getFullYear();
   let dateRange = startYear;
+  
   if (currentYear > startYear) {
     // En dash unicode: \u2013;
     dateRange += `\u2013${currentYear}`;
   }
-  ref.current = ref.current + 1;
-  console.log('footer ref:', ref.current);
 
   return (
 
     <footer>
       <div className="footer__container">
+
         <div className="footer__copy-info">
+
           <span className="footer__daterange">&copy; {dateRange}</span>
           <span><a href="https://aprilcopley.netlify.app" target='_blank' className="footer__link clickable">April Copley</a></span>
+
         </div>
 
         <div className="footer__links">
+
           {socialInfo.map((social, i) => (
             <SocialLink key={i} link={social.link} icon={<social.icon />}/>
           ))}
+
         </div>
+
       </div>
       
     </footer>
