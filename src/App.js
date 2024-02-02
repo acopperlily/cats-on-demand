@@ -125,7 +125,7 @@ function App() {
     setText(e.target.value);
   };
 
-  const deleteInput = e => {
+  const deleteInput = () => {
     setText('');
   };
 

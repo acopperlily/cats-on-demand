@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
 import SocialLink from "./SocialLink";
 
@@ -9,6 +9,7 @@ const socialInfo = [
 ];
 
 function Footer() {
+  const ref = useRef(0);
   // Calculate date range
   const startYear = 2022;
   const currentYear = new Date().getFullYear();
@@ -17,6 +18,8 @@ function Footer() {
     // En dash unicode: \u2013;
     dateRange += `\u2013${currentYear}`;
   }
+  ref.current = ref.current + 1;
+  console.log('footer ref:', ref.current);
 
   return (
 

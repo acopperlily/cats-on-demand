@@ -29,9 +29,9 @@ const Modal = props => {
         <div className="modal__footnotes">
           <p id="fn1">
             <small>
-              <span className="modal__num">1</span>
-              <a href="https://cataas.com/#/" target='_blank' rel='noopener' className='modal__link clickable'>Cataas </a> 
-              is currently in "recovery mode", and there may be interruptions in service as they migrate to a new server. If you encounter any errors, admire my darling Pele and try demanding a cat some other time. 
+              <span className="modal__num">1</span> Even though 
+              <a href="https://cataas.com/#/" target='_blank' rel='noopener' className='modal__link clickable'> Cataas </a> 
+              has migrated to a new server, there may still be interruptions in service. If you encounter any errors, admire my darling Pele and try demanding a cat some other time. 
               <a href="#fn3"><sup className='modal__num clickable'> 3</sup></a>
             </small>
           </p>
@@ -39,7 +39,7 @@ const Modal = props => {
           <p id="fn2">
             <small>
               <span className="modal__num">2</span>
-              In order to avoid errors in text rendering, some characters may be removed from input. No, you are not being censored.
+              In order to avoid errors in text rendering, some characters may be removed from input. Be mindful of the 25-character limit, but also be advised that your message may not display in its entirety due to the orientation of the photo retrieved. No, you are not being censored.
             </small>
           </p>
 

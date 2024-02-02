@@ -18,6 +18,8 @@ const Form = props => {
               <input
                 type="text" 
                 id="text"
+                // placeholder="Text goes here"
+                maxLength={25}
                 value={props.text} 
                 onChange={props.onChange}
               />
