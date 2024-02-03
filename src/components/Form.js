@@ -3,6 +3,8 @@ import { FaTimesCircle } from "react-icons/fa";
 
 const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, deleteInput }) => {
 
+  const charLimit = 25;
+
   return (
     <section className="request container">
 
@@ -16,12 +18,14 @@ const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, delet
 
             <label className="request__label clickable" htmlFor="text">Message (optional) </label>
 
+            {text.length >= charLimit && <span className="request__text-warning">Maximum character limit</span>}
+
             <div className="request__text-container">
 
               <input
                 type="text" 
                 id="text"
-                maxLength={25}
+                maxLength={charLimit}
                 value={text} 
                 onChange={onChange}
               />

@@ -211,13 +211,6 @@ main {
   box-shadow: 3px 5px 8px 0px rgb(106, 106, 106);
 }
 
-.image__error {
-  /* width: 15vw; */
-  /* height: 10%; */
-  /* object-fit: contain; */
-  /* overflow: hidden; */
-}
-
 .request {
   width: min(100%, 30em);
   margin: 0 auto;
@@ -268,6 +261,16 @@ main {
 .request__label:hover,
 .request__label:focus {
   color: var(--dark-teal-color);
+}
+
+.request__text-warning {
+  margin-left: 1rem;
+  font-family: var(--ff);
+  font-size: 0.8rem;
+  font-size: clamp(0.4rem, 0.4rem + 1vmin, 0.8rem);
+  font-weight: 600;
+  letter-spacing: -0.05ch;
+  color: rgb(209, 0, 0);
 }
 
 .request__text-container {
