@@ -16,6 +16,7 @@ const { domain, textParam, fontParam, jsonParam } = urlBreakdown;
 function MainLogic() {
   const [text, setText] = useState('AYYY');
   const [imageID, setImageID] = useState('');
+  const [imageTags, setImageTags] = useState([]);
   const [imageURL, setImageURL] = useState(null);
   const [triggerFetch, setTriggerFetch] = useState(false);
   const [status, setStatus] = useState('loading');
@@ -94,6 +95,7 @@ function MainLogic() {
         console.log('data:', data);
         if (imageID !== data.id) {
           setImageID(data._id);
+          setImageTags(data.tags);
         }
         setImageURL(getImageURL(data._id));
         setStatus(null);
@@ -132,12 +134,14 @@ function MainLogic() {
     setTriggerFetch(!triggerFetch);
   };
 
+  console.log('tags:', imageTags);
+
   return (
 
     <main>
       <div className="container main__container">
 
-        {status ? <Message status={status} /> : <Image image={imageURL} />}
+        {status ? <Message status={status} /> : <Image image={imageURL} tags={imageTags} />}
 
         <Form 
           status={status}

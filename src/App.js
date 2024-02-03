@@ -11,7 +11,6 @@ function App() {
   const [toggleModal, setToggleModal] = useState(false);
 
   const handleModalClick = () => {
-    console.log('modal', toggleModal);
     setToggleModal(!toggleModal);
   };
 

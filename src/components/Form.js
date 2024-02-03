@@ -18,7 +18,7 @@ const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, delet
 
             <label className="request__label clickable" htmlFor="text">Message (optional) </label>
 
-            {text.length >= charLimit && <span className="request__text-warning">Maximum character limit</span>}
+            {text.length >= charLimit && <span className="request__text-warning">Character limit reached</span>}
 
             <div className="request__text-container">
 
