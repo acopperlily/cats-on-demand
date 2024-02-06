@@ -29,9 +29,9 @@ const Modal = ({ handleClick }) => {
         <div className="modal__footnotes">
           <p id="fn1">
             <small>
-              <span className="modal__num">1</span> Even though 
+              <span className="modal__num">1</span> There may be interruptions in service when 
               <a href="https://cataas.com/#/" target='_blank' rel='noopener' className='modal__link clickable'> Cataas </a> 
-              has migrated to a new server, there may still be interruptions in service. If you encounter any errors, admire my darling Pele and try demanding a cat some other time. 
+              is performing maintenance or experiencing server issues. If you encounter any errors, admire my darling Pele and try demanding a cat some other time. 
               <a href="#fn3"><sup className='modal__num clickable'> 3</sup></a>
             </small>
           </p>
