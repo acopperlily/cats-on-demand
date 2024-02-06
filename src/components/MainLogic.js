@@ -114,8 +114,8 @@ function MainLogic() {
 
    // Remove problematic chars before fetching
   const sanitizeInput = () => {
-    let oldText = text.replace(/[?#%/\\]/gi, '');
-    setText(oldText);
+    let newText = text.replace(/[?#%/\\]/gi, '');
+    setText(newText);
   };
 
   const handleChange = e => {

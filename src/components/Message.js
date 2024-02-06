@@ -1,7 +1,6 @@
 import React from "react";
 import loadPele from '../../src/pele.png';
 import errorPele from '../../src/rolyPolyPele.jpg'
-// import errorPele from '../../src/errorPele.jpg';
 
 const Message = ({ status }) => {
 

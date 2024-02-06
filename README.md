@@ -14,11 +14,11 @@ I implemented a fetch request to Cataas API to retrieve cat photos. Users can in
 
 ## Optimizations
 
-I would like to improve mobile responsiveness.
+Instead of relying on the API to render the text onto the image, I would like to create my own code in order to display text. That way I could have more control over how the message displays on the photo.
 
 ## Lessons Learned
 
-This project underwent two different phases. COD was initially built for the purpose of learning how to retrieve and display data from an API. Then I overhauled the entire project while converting it to a React application.
+This project underwent two different phases. COD was initially built for the purpose of learning how to retrieve and display data from an API. Then I overhauled the entire project while converting it into a React application.
 
 ## Examples
 Take a look at this example that I have in my own portfolio:
