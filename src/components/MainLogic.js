@@ -3,13 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Form from './Form';
 import Image from './Image';
 import Message from './Message';
-
-const urlBreakdown = {
-  domain: 'https://cataas.com/cat',
-  textParam: '/says/',
-  fontParam: '?fontSize=50&fontColor=%23FFF',
-  jsonParam: '&json=true'
-};
+import urlBreakdown from '../utils/urlBreakdown';
 
 const { domain, textParam, fontParam, jsonParam } = urlBreakdown;
 
