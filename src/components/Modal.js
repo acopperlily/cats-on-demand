@@ -16,7 +16,7 @@ const Modal = ({ handleClick }) => {
       <div className="modal__body">
 
         <div className="modal__main">
-          <p>COD is a web application that retrieves cat photos and GIFs from <a href="https://cataas.com/#/" target='_blank' rel='noopener' className='modal__link clickable' >Cataas</a> (Cat as a Service) API. <a href="#fn1"><sup className='modal__num clickable'>1</sup></a></p>
+          <p>COD is a web application that retrieves cat photos and GIFs from <a href="https://cataas.com/#/" target='_blank' rel='noopener noreferrer' className='modal__link clickable' >Cataas</a> (Cat as a Service) API. <a href="#fn1"><sup className='modal__num clickable'>1</sup></a></p>
 
           <p>Demanding a cat is as simple as smashing that big silly button.</p>
 
@@ -30,7 +30,7 @@ const Modal = ({ handleClick }) => {
           <p id="fn1">
             <small>
               <span className="modal__num">1</span> There may be interruptions in service when 
-              <a href="https://cataas.com/#/" target='_blank' rel='noopener' className='modal__link clickable'> Cataas </a> 
+              <a href="https://cataas.com/#/" target='_blank' rel='noopener noreferrer' className='modal__link clickable'> Cataas </a> 
               is performing maintenance or experiencing server issues. If you encounter any errors, admire my darling Pele and try demanding a cat some other time. 
               <a href="#fn3"><sup className='modal__num clickable'> 3</sup></a>
             </small>
