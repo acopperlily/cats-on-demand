@@ -9,7 +9,7 @@ Cats may dominate the internet, but you can command the cats! Demand your dose o
 ## How It's Made
 
 **Tech Used:** 
-- ![cra](./src/icons/cra.svg)
+- ![cra](./src/icons/cra.svg) Create React App
 - ![react](./src/icons/react.svg) React
 - ![html](./src/icons/html.svg) HTML
 - ![css](./src/icons/css.svg) CSS
