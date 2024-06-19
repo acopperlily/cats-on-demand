@@ -16,7 +16,7 @@ const Modal = ({ handleClick }) => {
       <div className="modal__body">
 
         <div className="modal__main">
-          <p>COD is a web application that retrieves cat photos and GIFs from <a href="https://cataas.com/#/" target='_blank' rel='noopener noreferrer' className='modal__link clickable' >Cataas</a> (Cat as a Service) API. <a href="#fn1"><sup className='modal__num clickable'>1</sup></a></p>
+          <p>COD is a web application that retrieves cat photos from <a href="https://cataas.com/#/" target='_blank' rel='noopener noreferrer' className='modal__link clickable' >Cataas</a> (Cat as a Service) API. <a href="#fn1"><sup className='modal__num clickable'>1</sup></a></p>
 
           <p>Demanding a cat is as simple as smashing that big silly button.</p>
 
