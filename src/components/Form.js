@@ -16,7 +16,7 @@ const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, delet
         {status !== 'error' && <div className="request__input-container">
           <div className="request__textfield-container">
 
-            <label className="request__label clickable" htmlFor="text">Message (optional) </label>
+            <label className="request__label clickable" htmlFor="text">Image Text (optional) </label>
 
             {text.length >= charLimit && <span className="request__text-warning">Character limit reached</span>}
 
@@ -42,7 +42,7 @@ const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, delet
 
           <div className="request__check-container">
 
-            <label className="request__label clickable" htmlFor="keep">Keep kitty, change message</label>
+            <label className="request__label clickable" htmlFor="keep">Keep kitty, change image text</label>
 
             <input
               className="request__toggle"

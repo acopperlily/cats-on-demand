@@ -15,18 +15,20 @@ Cats may dominate the internet, but you can command the cats! Demand your dose o
 - ![css](./src/icons/css.svg) CSS
 - ![javascript](./src/icons/javascript.svg) JavaScript
 
-This is a React project using Create React App. A fetch request to the Cataas API retrieves a random cat photo. If you wish, you can also include text to be displayed on the photo.
+This cat meme generator is a React project built with Create React App. A fetch request to the Cataas API retrieves a random cat photo. If you wish, you can also include text to be displayed on the photo.
 
 ## Optimizations
 
-Instead of relying on the API to render the text onto the image, I would like to create my own code in order to display text. That way I could have more control over how the message displays on the photo.
+Instead of relying on the API to render the text onto the image, I would like to create my own code in order to display text. That way I could have more control over how the text displays on the photo.
 
 ## Lessons Learned
 
 This project underwent two different phases. COD was initially built for the purpose of learning how to retrieve and display data from an API. Then I overhauled the entire project while converting it into a React application.
 
-## Examples
+## Other Projects
 
 **Digital Canvas:** https://acopperlily.github.io/digital-canvas
+
+**Catalyzer** https://catalyzer.netlify.app
 
 **Happy Hour Cocktails:** https://acopperlily.github.io/happy-hour-cocktails

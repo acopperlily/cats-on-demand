@@ -20,9 +20,9 @@ const Modal = ({ handleClick }) => {
 
           <p>Demanding a cat is as simple as smashing that big silly button.</p>
 
-          <p>You can demand a cat with or without a message. Click the "X" to delete the text field, then you can either leave it blank or type your own message. <a href="#fn2"><sup className='modal__num clickable'>2</sup></a> </p>
+          <p>You can demand a cat with or without image text. Click the "X" to delete the text field, then you can either leave it blank or type your own text. <a href="#fn2"><sup className='modal__num clickable'>2</sup></a> </p>
 
-          <p>Like the kitty but not the text? You can demand the same cat with a different message. Simply toggle the switch and type something else.</p>
+          <p>Like the kitty but not the image text? You can demand the same cat with different text. Simply toggle the switch and type something else.</p>
 
         </div>
 
