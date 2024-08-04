@@ -39,6 +39,7 @@ body {
 }
 
 header {
+  padding-inline: 0.5rem;
   background-color: var(--medium-teal-color);
   display: grid;
   grid-template-columns: 10% 1fr 10%;
@@ -91,6 +92,9 @@ main {
   background-color: var(--light-color);
   margin-block: 2em;
   /* border: 1px solid red; */
+  width: 100%;
+  max-width: min(95%, 80em);
+
   /* height: 75vh; */
   flex: 1 0 100%;
   display: flex;
@@ -99,10 +103,6 @@ main {
   align-items: center;
   row-gap: clamp(4em, 1em + 2vmin, 5em);
   column-gap: clamp(2em, 1em + 1vmin, 10em);
-}
-
-.main__container > * {
-  /* border: 1px dotted blueviolet; */
 }
 
 .modal__container {
