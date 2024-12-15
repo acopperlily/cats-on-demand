@@ -1,7 +1,7 @@
 # Cats On Demand
-Cats may dominate the internet, but you can command the cats! Demand your dose of feline fun provided by Cataas (Cat as a Service) API.
+Cats may dominate the internet, but you can command the cats! Demand your dose of feline fun provided by **[Cataas](https://cataas.com)** (Cat as a Service) API.
 
-**Link to Project:** https://acopperlily.github.io/cats-on-demand
+**[Visit live site](https://acopperlily.github.io/cats-on-demand)**
 
 ![Screenshot of Cats On Demand website](https://raw.githubusercontent.com/acopperlily/cats-on-demand/main/public/main-preview.png)
 
@@ -27,8 +27,8 @@ This project underwent two different phases. COD was initially built for the pur
 
 ## Other Projects
 
-**Digital Canvas:** https://acopperlily.github.io/digital-canvas
+**[Digital Canvas](https://acopperlily.github.io/digital-canvas)**
 
-**Catalyzer** https://catalyzer.netlify.app
+**[Catalyzer](https://catalyzer.netlify.app)**
 
-**Happy Hour Cocktails:** https://acopperlily.github.io/happy-hour-cocktails
+**[Happy Hour Cocktails](https://acopperlily.github.io/happy-hour-cocktails)**
