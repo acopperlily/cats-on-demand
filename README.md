@@ -9,12 +9,11 @@ Cats may dominate the internet, but you can command the cats! Demand your dose o
 ## How It's Made
 
 **Tech Used:** 
-- ![cra](./src/icons/cra.svg|width=20) Create React App
-- <img src="./src/icons/cra.svg" width="20">
-- ![react](./src/icons/react.svg|width=20) React
-- ![html](./src/icons/html.svg|width=20) HTML
-- ![css](./src/icons/css.svg|width=20) CSS
-- ![javascript](./src/icons/javascript.svg|width=20) JavaScript
+- <img src="./src/icons/cra.svg" width="24"> Create React App
+- <img src="./src/icons/react.svg" width="24"> React
+- <img src="./src/icons/html.svg" width="24"> HTML
+- <img src="./src/icons/css.svg" width="24"> CSS
+- <img src="./src/icons/javascript.svg" width="24"> JavaScript
 
 This cat meme generator is a React project built with Create React App. A fetch request to the Cataas API retrieves a random cat photo. If you wish, you can also include text to be displayed on the photo.
 
