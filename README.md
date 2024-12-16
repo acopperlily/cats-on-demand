@@ -10,6 +10,7 @@ Cats may dominate the internet, but you can command the cats! Demand your dose o
 
 **Tech Used:** 
 - ![cra](./src/icons/cra.svg|width=20) Create React App
+- <img src="./src/icons/cra.svg" width="20">
 - ![react](./src/icons/react.svg|width=20) React
 - ![html](./src/icons/html.svg|width=20) HTML
 - ![css](./src/icons/css.svg|width=20) CSS
