@@ -1,5 +1,4 @@
 import React from 'react';
-import Message from './Message';
 
 const Image = ({ image, tags }) => {
   // Example url to display photo
