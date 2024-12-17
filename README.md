@@ -3,7 +3,8 @@ Cats may dominate the internet, but you can command the cats! Demand your dose o
 
 **[Visit live site](https://acopperlily.github.io/cats-on-demand)**
 
-[Screenshot of Cats On Demand website](./public/CODDemo.gif)
+[Screenshot of Cats On Demand website](./public/main-preview.png)
+<img src="./public/CODDemo.gif" />
 
 
 ## How It's Made
