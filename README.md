@@ -3,17 +3,17 @@ Cats may dominate the internet, but you can command the cats! Demand your dose o
 
 **[Visit live site](https://acopperlily.github.io/cats-on-demand)**
 
-![Screenshot of Cats On Demand website](https://raw.githubusercontent.com/acopperlily/cats-on-demand/main/public/main-preview.png)
+<img src="https://raw.githubusercontent.com/acopperlily/cats-on-demand/main/public/main-preview.png" width="300" alt="Screenshot of Cats On Demand website" />
 
 
 ## How It's Made
 
 **Tech Used:** 
-- <img src="./src/icons/cra.svg" width="24"> Create React App
-- <img src="./src/icons/react.svg" width="24"> React
-- <img src="./src/icons/html.svg" width="24"> HTML
-- <img src="./src/icons/css.svg" width="24"> CSS
-- <img src="./src/icons/javascript.svg" width="24"> JavaScript
+- <img src="./src/icons/cra.svg" width="24" /> Create React App
+- <img src="./src/icons/react.svg" width="24" /> React
+- <img src="./src/icons/html.svg" width="24" /> HTML
+- <img src="./src/icons/css.svg" width="24" /> CSS
+- <img src="./src/icons/javascript.svg" width="24" /> JavaScript
 
 This cat meme generator is a React project built with Create React App. A fetch request to the Cataas API retrieves a random cat photo. If you wish, you can also include text to be displayed on the photo.
 
