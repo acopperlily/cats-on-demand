@@ -88,10 +88,10 @@ function MainLogic() {
         const data = await res.json();
         console.log('data:', data);
         if (imageID !== data.id) {
-          setImageID(data._id);
+          setImageID(data.id);
           setImageTags(data.tags);
         }
-        setImageURL(getImageURL(data._id));
+        setImageURL(getImageURL(data.id));
         setStatus(null);
       } catch (err) {
         console.log('error:', err);
