@@ -2,12 +2,11 @@
   --light-bg-color: rgb(222, 238, 238);
   --dark-bg-color: rgb(179, 226, 246);
   --light-color: white;
-  --medium-teal-color: #00a1b3;
-  --dark-teal-color: #015060;
+  --medium-teal-color: hsl(187, 70%, 33%);
+  --dark-teal-color: hsl(190, 98%, 19%);
   --highlight-color: rgb(46, 200, 217);
 
   --ff-header: 'Montserrat', sans-serif;
-  /* --ff: 'Open Sans', sans-serif; */
   --ff: 'Inter', sans-serif;
 
   --trans-anim: all 200ms ease-in-out;
@@ -222,8 +221,8 @@ main {
   margin: 0;
   color: var(--medium-teal-color);
   font-family: var(--ff);
-  font-size: 2rem;
-  font-size: clamp(2rem, 1.5rem + 3vmin, 4rem);
+  font-size: 2.1rem;
+  font-size: clamp(2.1rem, 2rem + 3vmin, 5rem);
   font-weight: 800;
   line-height: 1em;
   letter-spacing: -0.08rem;
@@ -237,10 +236,10 @@ main {
 
 .request__sub {
   color: var(--dark-teal-color);
-  font-size: 1.1rem;
-  font-size: clamp(0.5rem, 0.5rem + 1vmin, 1.2rem);
+  font-size: 1.2rem;
+  font-size: clamp(0.7rem, 0.7rem + 1vmin, 1.3rem);
   font-weight: 600;
-  line-height: 130%;
+  line-height: 1.1;
   letter-spacing: -0.05em;
   margin-bottom: 2em;
 }
@@ -251,8 +250,8 @@ main {
 
 .request__label {
   font-family: var(--ff);
-  font-size: 0.8rem;
-  font-size: clamp(0.4rem, 0.4rem + 1vmin, 0.8rem);
+  font-size: 0.9rem;
+  font-size: clamp(0.5rem, 0.5rem + 1vmin, 0.9rem);
   font-weight: 600;
   text-transform: uppercase;
   color: var(--medium-teal-color);
@@ -411,8 +410,8 @@ span {
   padding-right: 0.2rem;
 }
 
-.footer__daterange {
-  padding-right: 0.8rem;
+.footer__year {
+  padding-right: 0.5rem;
 }
 
 a {

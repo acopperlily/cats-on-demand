@@ -12,7 +12,7 @@ function Footer() {
 
         <div className="footer__copy-info">
 
-          <span className="footer__daterange">
+          <span className="footer__year">
             &copy; {getYear()}
           </span>
 
