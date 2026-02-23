@@ -2,6 +2,7 @@
   --light-bg-color: rgb(222, 238, 238);
   --dark-bg-color: rgb(179, 226, 246);
   --light-color: white;
+  --light-teal-color: hsl(186, 100%, 35%);
   --medium-teal-color: hsl(187, 70%, 33%);
   --dark-teal-color: hsl(190, 98%, 19%);
   --highlight-color: rgb(46, 200, 217);
@@ -39,7 +40,7 @@ body {
 
 header {
   padding-inline: 0.5rem;
-  background-color: var(--medium-teal-color);
+  background-color: var(--light-teal-color);
   display: grid;
   grid-template-columns: 10% 1fr 10%;
   justify-items: center;
@@ -219,7 +220,7 @@ main {
 .request__title {
   padding: 0;
   margin: 0;
-  color: var(--medium-teal-color);
+  color: var(--light-teal-color);
   font-family: var(--ff);
   font-size: 2.1rem;
   font-size: clamp(2.1rem, 2rem + 3vmin, 5rem);
@@ -227,7 +228,7 @@ main {
   line-height: 1em;
   letter-spacing: -0.08rem;
   margin-bottom: 0.2em;
-  background: linear-gradient(0deg, var(--dark-teal-color), 30%, var(--medium-teal-color));
+  background: linear-gradient(0deg, var(--dark-teal-color), 30%, var(--light-teal-color));
   /* background: -webkit-linear-gradient(var(--medium-teal-color), var(--dark-teal-color)); */
   background-clip: text;
   -webkit-background-clip: text;
@@ -340,7 +341,7 @@ input {
 }
 
 .request__toggle:checked + .request__switch {
-  background-color: var(--medium-teal-color);
+  background-color: var(--light-teal-color);
 }
 
 .request__toggle {
@@ -353,7 +354,7 @@ input {
   border: none;
   padding: 0.8em;
   /* padding: calc(0.5rem + 1vh) calc(1rem + 2vw); */
-  background-color: var(--medium-teal-color);
+  background-color: var(--light-teal-color);
   color: var(--light-color);
   border-radius: 50px;
   cursor: pointer;
@@ -375,7 +376,7 @@ input {
 
 .request__button:active {
   transform: scale(0.98);
-  background-color: var(--medium-teal-color);
+  background-color: var(--light-teal-color);
   box-shadow: inset 0px -5px 3px var(--dark-teal-color);
 }
 
