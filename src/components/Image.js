@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Image = ({ image, tags }) => {
   // Example url to display photo
   // https://cataas.com/cat/cCJzyTTdiFMyIyHG/says/ayyy?font=Impact&fontSize=50&fontColor=%23FFF
@@ -13,7 +11,9 @@ const Image = ({ image, tags }) => {
 
   return (
 
-    <section className="image__container" >
+    <section 
+      className="image__container" 
+    >
       {cat}
     </section>
 

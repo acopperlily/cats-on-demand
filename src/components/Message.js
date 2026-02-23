@@ -1,4 +1,3 @@
-import React from "react";
 import loadPele from '../../src/pele.png';
 import errorPele from '../../src/rolyPolyPele.jpg'
 

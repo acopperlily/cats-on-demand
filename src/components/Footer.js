@@ -1,7 +1,7 @@
 import React from "react";
 import SocialLink from "./SocialLink";
 import socialInfo from "../utils/socialInfo";
-import getDateRange from "../utils/getDateRange";
+import getYear from "../utils/getYear";
 
 function Footer() {
 
@@ -13,7 +13,7 @@ function Footer() {
         <div className="footer__copy-info">
 
           <span className="footer__daterange">
-            &copy; {getDateRange(2022)}
+            &copy; {getYear()}
           </span>
 
           <span>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Form from './Form';
 import Image from './Image';
@@ -87,6 +87,11 @@ function MainLogic() {
         console.log('response:', res);
         const data = await res.json();
         console.log('data:', data);
+        if (!data.id) {
+          console.error('Unable to parse image ID');
+          setStatus('error');
+          return;
+        }
         if (imageID !== data.id) {
           setImageID(data.id);
           setImageTags(data.tags);
@@ -94,7 +99,7 @@ function MainLogic() {
         setImageURL(getImageURL(data.id));
         setStatus(null);
       } catch (err) {
-        console.log('error:', err);
+        console.error('error:', err);
         setStatus('error');
       }
     };
