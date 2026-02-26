@@ -10,7 +10,7 @@
   --ff-header: 'Montserrat', sans-serif;
   --ff: 'Inter', sans-serif;
 
-  --trans-anim: all 200ms ease-in-out;
+  --trans-anim: all 400ms ease-in-out;
 }
 *, *::after, *::before {
   padding: 0;
@@ -364,14 +364,20 @@ input {
   font-weight: 800;
   line-height: 100%;
   letter-spacing: -0.05ch;
+  outline: 1px solid transparent;
   box-shadow: inset 0px -5px 10px 3px var(--dark-teal-color);
   transition: var(--trans-anim);
 }
 
 .request__button:hover,
-.request__button:focus {
+.request__button:focus-visible {
   background-color: var(--dark-teal-color);
   box-shadow: inset 0px -5px 7px 0 var(--dark-teal-color);
+}
+
+.request__button:focus-visible {
+  box-shadow: 0 0 0 0 transparent,
+              0 0 0 3px var(--dark-teal-color);
 }
 
 .request__button:active {
@@ -402,17 +408,9 @@ footer {
   margin-inline: auto;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  column-gap: 0.3em;
-  row-gap: 0.7em;
-}
-
-span {
-  padding-right: 0.2rem;
-}
-
-.footer__year {
-  padding-right: 0.5rem;
+  gap: 0.5em;
 }
 
 a {
@@ -420,13 +418,36 @@ a {
   color: var(--light-color);
 }
 
+.footer__year {
+  padding-right: 0.25em;
+}
+
+.footer__portfolio {
+  padding: 0.25em;
+}
+
 .footer__links {
-  margin-top: 0.05em;
+  display: flex;
+  column-gap: 0.75em;
+}
+
+.footer__link {
+  border-radius: 1px;
+  outline: 0 solid transparent;
+}
+
+.footer__link:focus-visible {
+  box-shadow: 0 0 0 0 var(--dark-teal-color),
+              0 0 0 1px var(--light-teal-color);
 }
 
 .footer__icon {
-  padding-left: 0.6em;
+  padding: 0.2em;
   font-size: clamp(0.6rem, 0.6rem + 1vw, 1.1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px dotted yellow; */
 }
 
 .image__loading {
@@ -439,12 +460,14 @@ a {
 
 .clickable {
   cursor: pointer;
-  transition: var(--trans-anim);
 }
 
 .clickable:hover,
-.clickable:focus {
+.clickable:focus-visible {
   opacity: 0.8;
+  transform: rotateY(360deg) scale(1.1);
+  transition: var(--trans-anim);
+
 }
 
 @-webkit-keyframes spin {

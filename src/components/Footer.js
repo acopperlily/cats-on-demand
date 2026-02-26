@@ -15,14 +15,15 @@ function Footer() {
             &copy; {getYear()}
           </span>
 
-          <span>
+          <span className="footer__portfolio">
             <a 
               href="https://aprilcopley.netlify.app"
-              aria-label="Professional profile"
+              aria-label="Professional portfolio"
               target="_blank" 
               rel="noopener noreferrer"
-              className="footer__link clickable">
-                April Copley
+              className="footer__link clickable"
+            >
+              April Copley
             </a>
           </span>
 

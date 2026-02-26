@@ -75,8 +75,8 @@ const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, delet
 
         <button
           className="request__button" 
-          type='submit'
-          disabled={status === 'loading'}
+          type="submit"
+          disabled={status === "loading"}
         >
           Show Me Your Kitties
         </button>
