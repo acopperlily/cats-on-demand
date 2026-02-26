@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-import Form from './Form';
-import Image from './Image';
-import Message from './Message';
-import urlBreakdown from '../utils/urlBreakdown';
+import Form from "./Form";
+import Image from "./Image";
+import Message from "./Message";
+import urlBreakdown from "../utils/urlBreakdown";
 
 const { domain, textParam, fontParam, jsonParam } = urlBreakdown;
 
-function MainLogic() {
+function MainLogic({ isInert }) {
   const [text, setText] = useState('AYYY');
   const [imageID, setImageID] = useState('');
   const [imageTags, setImageTags] = useState([]);
@@ -137,7 +137,7 @@ function MainLogic() {
 
   return (
 
-    <main>
+    <main inert={isInert ? '' : undefined} >
       <div className="container main__container">
 
         {status ? <Message status={status} /> : <Image image={imageURL} tags={imageTags} />}

@@ -1,5 +1,5 @@
 const urlBreakdown = {
-  domain: 'https://cataass.com/cat',
+  domain: 'https://cataas.com/cat',
   textParam: '/says/',
   fontParam: '?fontSize=50&fontColor=%23FFF',
   jsonParam: '&json=true'

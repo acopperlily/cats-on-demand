@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
-import Footer from './components/Footer';
-import Header from './components/Header';
-import MainLogic from './components/MainLogic';
-import Modal from './components/Modal';
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import MainLogic from "./components/MainLogic";
+import Modal from "./components/Modal";
 
-import './App.css';
+import "./App.css";
 
 function App() {
   const [toggleModal, setToggleModal] = useState(false);
@@ -23,16 +23,16 @@ function App() {
       <div
         className="wrapper"
         style={toggleModal
-          ? {filter: 'brightness(20%)'}
-          : {filter: 'none'}}
+          ? {filter: "brightness(20%)"}
+          : {filter: "none"}}
         onClick={toggleModal ? handleModalClick : null}
       >
 
-        <Header handleClick={handleModalClick}/>
+        <Header isInert={toggleModal} handleClick={handleModalClick}/>
 
-        <MainLogic />
+        <MainLogic isInert={toggleModal} />
 
-        <Footer />
+        <Footer isInert={toggleModal} />
 
       </div>
       

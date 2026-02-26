@@ -2,11 +2,11 @@ import SocialLink from "./SocialLink";
 import socialInfo from "../utils/socialInfo";
 import getYear from "../utils/getYear";
 
-function Footer() {
+function Footer({ isInert }) {
 
   return (
 
-    <footer>
+    <footer inert={isInert ? '' : undefined}>
       <div className="footer__container">
 
         <div className="footer__copy-info">
@@ -15,7 +15,7 @@ function Footer() {
             &copy; {getYear()}
           </span>
 
-          <span className="footer__portfolio">
+          <span className="footer__portfolio clickable">
             <a 
               href="https://aprilcopley.netlify.app"
               aria-label="Professional portfolio"
