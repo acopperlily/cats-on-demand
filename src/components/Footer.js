@@ -1,4 +1,3 @@
-import React from "react";
 import SocialLink from "./SocialLink";
 import socialInfo from "../utils/socialInfo";
 import getYear from "../utils/getYear";
@@ -19,8 +18,9 @@ function Footer() {
           <span>
             <a 
               href="https://aprilcopley.netlify.app"
-              target='_blank' 
-              rel='noopener noreferrer'
+              aria-label="Professional profile"
+              target="_blank" 
+              rel="noopener noreferrer"
               className="footer__link clickable">
                 April Copley
             </a>
@@ -31,7 +31,12 @@ function Footer() {
         <div className="footer__links">
 
           {socialInfo.map((social, i) => (
-            <SocialLink key={i} link={social.link} icon={<social.icon />}/>
+            <SocialLink 
+              key={i} 
+              link={social.link} 
+              icon={<social.icon />} 
+              label={social.label} 
+            />
           ))}
 
         </div>
