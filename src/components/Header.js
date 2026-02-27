@@ -9,9 +9,14 @@ const Header = ({ isInert, handleClick }) => {
       <button 
         type="button"
         className="header__info-container clickable" 
+        aria-label="Open information dialog"
         onClick={handleClick}
       >
-        <FaInfoCircle className="header__info-icon" />
+        <FaInfoCircle 
+          className="header__info-icon" 
+          aria-hidden="true"
+          focusable="false"
+        />
       </button>
 
     </header>

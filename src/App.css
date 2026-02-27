@@ -305,6 +305,15 @@ sup.modal__num {
   align-items: center;
 }
 
+.request__text {
+  outline: 1px solid transparent;
+}
+
+.request__text:focus-within {
+  box-shadow: 0 0 0 0 var(--dark-bg-color),
+              0 0 0 2px var(--medium-teal-color);
+}
+
 .request__check-container {
   display: flex;
   justify-content: space-between;

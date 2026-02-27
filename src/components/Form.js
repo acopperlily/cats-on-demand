@@ -22,23 +22,41 @@ const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, delet
               Image Text (optional) 
             </label>
 
-            {text.length >= charLimit && <span className="request__text-warning">Character limit reached</span>}
+            {text.length >= charLimit && (
+              <span 
+                className="request__text-warning"
+              >
+                Character limit reached
+              </span>
+            )}
 
             <div className="request__text-container">
 
               <input
                 type="text" 
+                className="request__text"
                 id="text"
                 maxLength={charLimit}
                 value={text} 
                 onChange={onChange}
               />
 
-              <div className="request__delete-container clickable">
+              {text.length && (
+                <button 
+                  type="button"
+                  className="request__delete-container clickable"
+                  aria-label="Delete text"
+                >
 
-                <FaTimesCircle className="request__delete-icon" onClick={deleteInput}/>
+                  <FaTimesCircle 
+                    className="request__delete-icon" 
+                    aria-hidden="true"
+                    focusable="false"
+                    onClick={deleteInput}
+                  />
 
-              </div>
+                </button>)
+              }
 
             </div>
 

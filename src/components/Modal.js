@@ -23,9 +23,13 @@ const Modal = ({ handleClick }) => {
         type="button"
         className="modal__exit-container clickable" 
         onClick={handleClick}
-        aria-label="Close modal"
+        aria-label="Close information dialog"
       >
-        <FaTimesCircle className="modal__exit-icon" />
+        <FaTimesCircle 
+          className="modal__exit-icon"
+          aria-hidden="true"
+          focusable="false"
+        />
       </button>
 
       <h3 
