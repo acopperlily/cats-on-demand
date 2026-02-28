@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/cats-on-demand/static/css/main.a7f1edfc.css",
-    "main.js": "/cats-on-demand/static/js/main.c21f5d8a.js",
+    "main.css": "/cats-on-demand/static/css/main.f87bfefe.css",
+    "main.js": "/cats-on-demand/static/js/main.ebdad65b.js",
     "static/media/rolyPolyPele.jpg": "/cats-on-demand/static/media/rolyPolyPele.b25b5bf721584d6a26e4.jpg",
     "static/media/pele.png": "/cats-on-demand/static/media/pele.53a81c49f473ebd915bc.png",
     "index.html": "/cats-on-demand/index.html",
-    "main.a7f1edfc.css.map": "/cats-on-demand/static/css/main.a7f1edfc.css.map",
-    "main.c21f5d8a.js.map": "/cats-on-demand/static/js/main.c21f5d8a.js.map"
+    "main.f87bfefe.css.map": "/cats-on-demand/static/css/main.f87bfefe.css.map",
+    "main.ebdad65b.js.map": "/cats-on-demand/static/js/main.ebdad65b.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7f1edfc.css",
-    "static/js/main.c21f5d8a.js"
+    "static/css/main.f87bfefe.css",
+    "static/js/main.ebdad65b.js"
   ]
 }
