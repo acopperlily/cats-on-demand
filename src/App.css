@@ -33,6 +33,11 @@ button {
   background-color: transparent;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
 .App {
   width: 100%;
 }
@@ -80,7 +85,7 @@ header {
 
 .header__info-container:focus-visible {
   box-shadow: 0 0 0 0 var(--light-teal-color),
-              0 0 0 2px var(--dark-teal-color);
+              0 0 0 2px var(--light-color);
 }
 
 .header__info-icon {
@@ -155,7 +160,7 @@ sup.modal__num {
 .modal__link:focus-visible,
 .modal__num-container:focus-visible {
   box-shadow: 0 0 0 0 var(--dark-teal-color),
-              0 0 0 2px var(--light-teal-color);
+              0 0 0 2px var(--light-bg-color);
 }
 
 .modal__exit-container {
@@ -163,7 +168,7 @@ sup.modal__num {
 }
 
 .modal__exit-container:focus-visible {
-  box-shadow: 0 0 0 2px var(--light-teal-color);
+  box-shadow: 0 0 0 2px var(--light-bg-color);
 }
 
 .modal__exit-icon {
@@ -272,6 +277,14 @@ sup.modal__num {
 
 .request__form {
   width: min(100%, 30em);
+  /* border: 1px dotted rgb(175, 37, 60); */
+}
+
+.request__input-container {
+  /* border: 1px solid rgb(255, 0, 106); */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
 }
 
 .request__label {
@@ -299,13 +312,13 @@ sup.modal__num {
 }
 
 .request__text-container {
-  margin: 0.4em 0 1.5em 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
+  margin-top: 0.4em;
+  position: relative;
 }
 
 .request__text {
+  padding-right: 2rem;
+  width: 100%;
   outline: 1px solid transparent;
 }
 
@@ -333,16 +346,26 @@ input {
 }
 
 .request__delete-container {
-  flex: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  /* border: 1px dotted red; */
+  border-radius: 5px;
+  outline: 1px solid transparent;
+}
+
+.request__delete-container:focus-visible {
+  box-shadow: 0 0 0 0 red,
+              0 0 0 2px var(--medium-teal-color);
 }
 
 .request__delete-icon {
-  margin-left: -2em;
+  /* margin-left: -4em; */
   font-size: 1.2rem;
   color: var(--medium-teal-color);
 }
@@ -411,7 +434,7 @@ input {
 
 .request__button:focus-visible {
   box-shadow: 0 0 0 0 transparent,
-              0 0 0 3px var(--dark-teal-color);
+              0 0 0 2px var(--dark-teal-color);
 }
 
 .request__button:active {
@@ -421,8 +444,6 @@ input {
 }
 
 .request__button:disabled {
-  cursor: not-allowed;
-  opacity: 0.7;
   color: var(--light-bg-color);
 }
 
@@ -478,7 +499,7 @@ a {
 
 .footer__link:focus-visible {
   box-shadow: 0 0 0 0 var(--dark-teal-color),
-              0 0 0 1px var(--light-teal-color);
+              0 0 0 1px var(--light-color);
 }
 
 .footer__icon {
@@ -504,7 +525,6 @@ a {
 
 .clickable:hover,
 .clickable:focus-visible {
-  opacity: 0.8;
   transition: var(--trans-anim);
 }
 

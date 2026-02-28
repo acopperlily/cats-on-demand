@@ -41,22 +41,19 @@ const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, delet
                 onChange={onChange}
               />
 
-              {text.length && (
-                <button 
-                  type="button"
-                  className="request__delete-container clickable"
-                  aria-label="Delete text"
-                >
-
-                  <FaTimesCircle 
-                    className="request__delete-icon" 
-                    aria-hidden="true"
-                    focusable="false"
-                    onClick={deleteInput}
-                  />
-
-                </button>)
-              }
+              <button 
+                type="button"
+                className="request__delete-container clickable"
+                aria-label="Delete text"
+                disabled={text.length === 0}
+              >
+                <FaTimesCircle 
+                  className="request__delete-icon" 
+                  aria-hidden="true"
+                  focusable="false"
+                  onClick={deleteInput}
+                />
+              </button>
 
             </div>
 
