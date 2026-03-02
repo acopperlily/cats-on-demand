@@ -46,47 +46,44 @@ const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, delet
                 className="request__delete-container clickable"
                 aria-label="Delete text"
                 disabled={text.length === 0}
+                onClick={deleteInput}
               >
                 <FaTimesCircle 
                   className="request__delete-icon" 
                   aria-hidden="true"
                   focusable="false"
-                  onClick={deleteInput}
                 />
               </button>
 
             </div>
 
           </div>
-
+          
           <div className="request__check-container">
-
             <label 
-              className="request__label clickable" 
               htmlFor="keep"
+              className="request__label request__check-wrapper"
             >
-              Keep kitty, change image text
+              <span className="request__label clickable">
+                Keep kitty, change image text
+              </span>
+              <input 
+                type="checkbox" 
+                className="request__toggle"
+                name="keep"
+                id="keep"
+                checked={keepImage}
+                onChange={(e) => onToggleKeep(e.target.checked)}
+              />
+              <span
+                className="request__track"
+              >
+              </span>
             </label>
-
-            <input
-              className="request__toggle"
-              type="checkbox" 
-              name="keep" 
-              id="keep" 
-              checked={keepImage}
-              onChange={(e) => onToggleKeep(e.target.checked)}
-            />
-
-            <label 
-              htmlFor="keep" 
-              className="request__switch clickable"
-            >
-              
-            </label>
-
           </div>
 
-        </div>}
+        </div>
+        }
 
         <button
           className="request__button" 
