@@ -141,6 +141,12 @@ main {
   text-align: left;
   overflow: scroll;
   box-shadow: 0px 0px 20px 5px var(--highlight-color);
+  outline: 0 solid transparent;
+}
+
+.modal__container:focus-visible {
+  box-shadow: 0 0 0 2px var(--light-color),
+              0 0 20px 5px var(--highlight-color);
 }
 
 .modal__link,
