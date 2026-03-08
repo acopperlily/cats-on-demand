@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/montserrat-variable.ttf') format('truetype');
+  font-weight: 400 500 700 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/inter-variable.ttf') format('truetype');
+  font-weight: 400 500 600 700 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --light-bg-color: rgb(222, 238, 238);
   --dark-bg-color: rgb(179, 226, 246);
@@ -7,8 +23,8 @@
   --dark-teal-color: hsl(190, 98%, 19%);
   --highlight-color: rgb(46, 200, 217);
 
-  --ff-header: 'Montserrat', sans-serif;
-  --ff: 'Inter', sans-serif;
+  --ff-header: 'Montserrat', system-ui, Arial, Helvetica, 'Helvetica Neue', sans-serif;
+  --ff: 'Inter', system-ui, Arial, sans-serif;
 
   --br: 5px;
 
@@ -123,6 +139,8 @@ main {
 }
 
 .modal__container {
+  font-family: var(--ff);
+  font-weight: 400;
   color: var(--light-color);
   padding: 0.5em;
   width: 90%;
@@ -275,7 +293,7 @@ sup.modal__num {
   color: var(--dark-teal-color);
   font-size: 1.2rem;
   font-size: clamp(0.7rem, 0.7rem + 1vmin, 1.3rem);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.05em;
   margin-bottom: 2em;
@@ -283,11 +301,9 @@ sup.modal__num {
 
 .request__form {
   width: min(100%, 30em);
-  /* border: 1px dotted rgb(175, 37, 60); */
 }
 
 .request__input-container {
-  /* border: 1px solid rgb(255, 0, 106); */
   display: flex;
   flex-direction: column;
   gap: 1.5em;
@@ -297,7 +313,7 @@ sup.modal__num {
   font-family: var(--ff);
   font-size: 0.9rem;
   font-size: clamp(0.5rem, 0.5rem + 1vmin, 0.9rem);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--medium-teal-color);
 }
@@ -475,6 +491,7 @@ footer {
   font-size: 0.8rem;
   font-size: calc(0.5rem + 1vw);
   font-size: clamp(0.5rem, 0.5rem + 1vw, 1rem);
+  font-weight: 500;
 }
 
 .footer__container {
@@ -527,7 +544,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px dotted yellow; */
 }
 
 .image__loading {
