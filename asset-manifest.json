@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/cats-on-demand/static/css/main.c8daa40f.css",
+    "main.css": "/cats-on-demand/static/css/main.28d487c9.css",
     "main.js": "/cats-on-demand/static/js/main.568429fe.js",
     "static/media/rolyPolyPele.jpg": "/cats-on-demand/static/media/rolyPolyPele.b25b5bf721584d6a26e4.jpg",
     "static/media/inter-variable.ttf": "/cats-on-demand/static/media/inter-variable.e05c5f3d1fa6a3893d84.ttf",
     "static/media/pele.png": "/cats-on-demand/static/media/pele.53a81c49f473ebd915bc.png",
     "static/media/montserrat-variable.ttf": "/cats-on-demand/static/media/montserrat-variable.0ba081b76521874cf46c.ttf",
     "index.html": "/cats-on-demand/index.html",
-    "main.c8daa40f.css.map": "/cats-on-demand/static/css/main.c8daa40f.css.map",
+    "main.28d487c9.css.map": "/cats-on-demand/static/css/main.28d487c9.css.map",
     "main.568429fe.js.map": "/cats-on-demand/static/js/main.568429fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.c8daa40f.css",
+    "static/css/main.28d487c9.css",
     "static/js/main.568429fe.js"
   ]
 }
