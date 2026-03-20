@@ -249,6 +249,7 @@ sup.modal__num {
   max-width: 100%;
   min-height: 30vmax;
   max-height: 30vmin;
+  width: 600px;
   height: min(100%, 50vh);
   display: flex;
   flex-direction: column;
@@ -279,7 +280,7 @@ sup.modal__num {
   font-size: 2.1rem;
   font-size: clamp(2.1rem, 2rem + 3vmin, 5rem);
   font-weight: 800;
-  line-height: 1em;
+  line-height: 0.9;
   letter-spacing: -0.08rem;
   margin-bottom: 0.2em;
   background: linear-gradient(0deg, var(--dark-teal-color), 30%, var(--light-teal-color));
