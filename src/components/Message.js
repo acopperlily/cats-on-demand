@@ -1,5 +1,5 @@
 import loadPele from '../../src/pele.png';
-import errorPele from '../../src/rolyPolyPele.jpg'
+import errorPele from '../../src/rolyPolyPele.webp'
 
 const Message = ({ status }) => {
 
