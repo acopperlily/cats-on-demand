@@ -12,9 +12,10 @@ function MainLogic({ isInert }) {
   const [imageID, setImageID] = useState('');
   const [imageTags, setImageTags] = useState([]);
   const [imageURL, setImageURL] = useState(null);
-  const [triggerFetch, setTriggerFetch] = useState(false);
   const [status, setStatus] = useState('loading');
   const [keepImage, setKeepImage] = useState(false);
+
+  console.log('rendering');
 
   const getFetchURL = () => {
 
@@ -66,50 +67,53 @@ function MainLogic({ isInert }) {
   }
 
   // Fetch cat photo
-  useEffect(() => {
+  const getCat = async () => {
 
     // This cancels erroneous requests
     const controller = new AbortController();
     const signal = controller.signal;
 
-    const getCat = async () => {
-      let fetchURL = getFetchURL();
-      try {
-        const res = await fetch(fetchURL, { signal });
+    let fetchURL = getFetchURL();
 
-        // Test for gateway timeout
-        // const res = await fetch('https://httpstat.us/504?sleep=10000');
+    try {
+      const res = await fetch(fetchURL, { signal });
 
-        if (!res.ok) {
-          setStatus('error');
-          throw new Error('Failed to fetch');
-        }
-        console.log('response:', res);
-        const data = await res.json();
-        console.log('data:', data);
-        if (!data.id) {
-          console.error('Unable to parse image ID');
-          setStatus('error');
-          return;
-        }
-        if (imageID !== data.id) {
-          setImageID(data.id);
-          setImageTags(data.tags);
-        }
-        setImageURL(getImageURL(data.id));
-        setStatus(null);
-      } catch (err) {
-        console.error('error:', err);
+      // Test for gateway timeout
+      // const res = await fetch('https://httpstat.us/504?sleep=10000');
+
+      if (!res.ok) {
         setStatus('error');
+        throw new Error('Failed to fetch');
       }
-    };
-
-    getCat();
-
+      console.log('response:', res);
+      const data = await res.json();
+      console.log('data:', data);
+      if (!data.id) {
+        console.error('Unable to parse image ID');
+        setStatus('error');
+        return;
+      }
+      if (imageID !== data.id) {
+        setImageID(data.id);
+        setImageTags(data.tags);
+      }
+      setImageURL(getImageURL(data.id));
+      setStatus(null);
+    } catch (err) {
+      console.error('error:', err);
+      setStatus('error');
+    }
     return () => {
       controller.abort();
     }
-  }, [triggerFetch]);
+  };
+
+  // Fetch cat photo on page load
+  useEffect(() => {
+
+    getCat();
+
+  }, []);
 
    // Remove problematic chars before fetching
   const sanitizeInput = () => {
@@ -130,7 +134,7 @@ function MainLogic({ isInert }) {
     e.preventDefault();
     setStatus('loading');
     sanitizeInput();
-    setTriggerFetch(!triggerFetch);
+    getCat();
   };
 
   console.log('tags:', imageTags);
