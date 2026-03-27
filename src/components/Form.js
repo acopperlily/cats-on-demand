@@ -1,13 +1,36 @@
+import { useState } from "react";
 import { FaTimesCircle } from "react-icons/fa";
 
-const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, deleteInput }) => {
+const Form = ({ status, keepImage, onToggleKeep, onClick }) => {
+
+  const [text, setText] = useState('AYYY');
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    onClick(e, text);
+  };
+
+  // Remove problematic chars before fetching
+  const sanitizeInput = text => {
+    const pattern = /[?#%/\\]/gi;
+    let newText = text.replace(pattern, '');
+    return newText;
+  };
+
+  const deleteInput = () => {
+    setText('');
+  };
+
+  const changeText = text => {
+    setText(sanitizeInput(text));
+  };
 
   const charLimit = 25;
 
   return (
     <section className="request container">
 
-      <form className="request__form" onSubmit={onSubmit}>
+      <form className="request__form" onSubmit={handleSubmit}>
 
         <h2 className="request__title">Demand a cat</h2>
         <p className="request__sub">You want cat, and you want it right meow.<br></br>Go on and smash that big silly button.</p>
@@ -38,7 +61,7 @@ const Form = ({ status, text, keepImage, onToggleKeep, onSubmit, onChange, delet
                 id="text"
                 maxLength={charLimit}
                 value={text} 
-                onChange={onChange}
+                onChange={e => changeText(e.target.value)}
               />
 
               <button 

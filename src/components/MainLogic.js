@@ -8,7 +8,6 @@ import urlBreakdown from "../utils/urlBreakdown";
 const { domain, textParam, fontParam, jsonParam } = urlBreakdown;
 
 function MainLogic({ isInert }) {
-  const [text, setText] = useState('AYYY');
   const [imageID, setImageID] = useState('');
   const [imageTags, setImageTags] = useState([]);
   const [imageURL, setImageURL] = useState(null);
@@ -17,7 +16,9 @@ function MainLogic({ isInert }) {
 
   console.log('rendering');
 
-  const getFetchURL = () => {
+  const getFetchURL = (text) => {
+
+    // setText(text);
 
     // https://cataas.com/cat
     let url = domain; 
@@ -51,7 +52,7 @@ function MainLogic({ isInert }) {
     return url;
   }
 
-  const getImageURL = id => {
+  const getImageURL = (id, text) => {
 
     // https://cataas.com/cat/imageID
     let url = domain + '/' + id;
@@ -67,13 +68,13 @@ function MainLogic({ isInert }) {
   }
 
   // Fetch cat photo
-  const getCat = async () => {
+  const getCat = async (text='') => {
 
     // This cancels erroneous requests
     const controller = new AbortController();
     const signal = controller.signal;
 
-    let fetchURL = getFetchURL();
+    let fetchURL = getFetchURL(text);
 
     try {
       const res = await fetch(fetchURL, { signal });
@@ -97,7 +98,7 @@ function MainLogic({ isInert }) {
         setImageID(data.id);
         setImageTags(data.tags);
       }
-      setImageURL(getImageURL(data.id));
+      setImageURL(getImageURL(data.id, text));
       setStatus(null);
     } catch (err) {
       console.error('error:', err);
@@ -111,30 +112,16 @@ function MainLogic({ isInert }) {
   // Fetch cat photo on page load
   useEffect(() => {
 
-    getCat();
+    getCat('AYYY');
 
   }, []);
-
-   // Remove problematic chars before fetching
-  const sanitizeInput = () => {
-    let newText = text.replace(/[?#%/\\]/gi, '');
-    setText(newText);
-  };
-
-  const handleChange = e => {
-    setText(e.target.value);
-  };
-
-  const deleteInput = () => {
-    setText('');
-  };
+  
 
   // Test click function
-  const handleSubmit = e => {
+  const handleClick = (e, text) => {
     e.preventDefault();
     setStatus('loading');
-    sanitizeInput();
-    getCat();
+    getCat(text);
   };
 
   console.log('tags:', imageTags);
@@ -148,12 +135,9 @@ function MainLogic({ isInert }) {
 
         <Form 
           status={status}
-          text={text}
           keepImage={keepImage}
           onToggleKeep={setKeepImage} 
-          deleteInput={deleteInput} 
-          onChange={handleChange} 
-          onSubmit={handleSubmit} 
+          onClick={handleClick} 
         />
 
       </div>
