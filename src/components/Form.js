@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaTimesCircle } from "react-icons/fa";
 
-const Form = ({ status, keepImage, onToggleKeep, onClick }) => {
+const Form = ({ status, cooldown, keepImage, onToggleKeep, onClick }) => {
 
   const [text, setText] = useState('AYYY');
 
@@ -111,7 +111,7 @@ const Form = ({ status, keepImage, onToggleKeep, onClick }) => {
         <button
           className="request__button" 
           type="submit"
-          disabled={status === "loading"}
+          disabled={status === "loading" || cooldown}
         >
           Show Me Your Kitties
         </button>

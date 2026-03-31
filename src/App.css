@@ -484,7 +484,8 @@ input {
 }
 
 .request__button:disabled {
-  color: var(--light-bg-color);
+  background-color: var(--dark-teal-color);
+  opacity: 0.9;
 }
 
 footer {

@@ -13,12 +13,12 @@ function MainLogic({ isInert }) {
   const [imageURL, setImageURL] = useState(null);
   const [status, setStatus] = useState('loading');
   const [keepImage, setKeepImage] = useState(false);
+  const [cooldown, setCooldown] = useState(false);
 
   console.log('rendering');
 
   const getFetchURL = (text) => {
 
-    // setText(text);
 
     // https://cataas.com/cat
     let url = domain; 
@@ -70,14 +70,12 @@ function MainLogic({ isInert }) {
   // Fetch cat photo
   const getCat = async (text='') => {
 
-    // This cancels erroneous requests
-    const controller = new AbortController();
-    const signal = controller.signal;
+    text = encodeURIComponent(text);
 
     let fetchURL = getFetchURL(text);
 
     try {
-      const res = await fetch(fetchURL, { signal });
+      const res = await fetch(fetchURL);
 
       // Test for gateway timeout
       // const res = await fetch('https://httpstat.us/504?sleep=10000');
@@ -104,18 +102,20 @@ function MainLogic({ isInert }) {
       console.error('error:', err);
       setStatus('error');
     }
-    return () => {
-      controller.abort();
-    }
+
+    // Disable button temporarily
+    setCooldown(true);
+    setTimeout(() => setCooldown(false), 4000);
   };
 
   // Fetch cat photo on page load
   useEffect(() => {
-
     getCat('AYYY');
 
+    // Gets rid of error message
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
 
   // Test click function
   const handleClick = (e, text) => {
@@ -135,6 +135,7 @@ function MainLogic({ isInert }) {
 
         <Form 
           status={status}
+          cooldown={cooldown}
           keepImage={keepImage}
           onToggleKeep={setKeepImage} 
           onClick={handleClick} 
